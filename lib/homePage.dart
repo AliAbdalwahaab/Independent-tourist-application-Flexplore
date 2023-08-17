@@ -19,7 +19,7 @@ class HomePage extends StatelessWidget {
     return AppBar(
       title: const Text("Flexplore Logo",
         style: TextStyle(
-            color: Colors.black,
+            color: Colors.white,
             fontSize: 20,
             fontWeight: FontWeight.bold
         ),
@@ -53,6 +53,7 @@ class HomePage extends StatelessWidget {
             'assets/icons/drawer_icon.svg',
             height: 20,
             width: 20,
+            colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
           ),
         ),
       ),
@@ -71,6 +72,7 @@ class HomePage extends StatelessWidget {
               'assets/icons/profile_icon.svg',
               height: 50,
               width: 50,
+              colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
             ),
           ),
         )
