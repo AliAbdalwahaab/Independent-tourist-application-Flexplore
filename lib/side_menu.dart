@@ -1,138 +1,120 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
+class RightSubMenu extends StatelessWidget {
+  const RightSubMenu({
+    super.key,
+    required this.tripDestination,
+    required this.tripDate,
+  });
 
-class UserInfo {
-  final String name;
-  final String email;
+  final String tripDestination;
+  final String tripDate;
 
-  const UserInfo(this.name, this.email);
-}
-
-class TripInfo {
-  final String destination;
-  final String date;
-
-  const TripInfo(this.destination, this.date);
-}
-
-class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Side Menu Example',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+    return Drawer(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          DrawerHeader(
+            decoration: const BoxDecoration(
+              color: Colors.blue,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                const Text(
+                  'Trip Info',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 24,
+                  ),
+                ),
+                const SizedBox(height: 8),
+                Text(
+                  'Destination: $tripDestination\nDate: $tripDate',
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
-      home: MainScreen(),
     );
   }
 }
 
-class MainScreen extends StatelessWidget {
-  final UserInfo user = const UserInfo("John Doe", "johndoe@example.com");
-  final TripInfo trip = const TripInfo("Paris", "2023-08-15");
+class LeftSubMenu extends StatelessWidget {
+  const LeftSubMenu({
+    super.key,
+    required this.username,
+    required this.email,
+  });
+
+  final String username;
+  final String email;
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Side Menu Example'),
-      ),
-      body: const Center(
-        child: Text('Main Content'),
-      ),
-      drawer: Drawer(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            DrawerHeader(
-              decoration: const BoxDecoration(
-                color: Colors.blue,
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Text(
-                    user.name,
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 24,
-                    ),
+    return Drawer(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          DrawerHeader(
+            decoration: const BoxDecoration(
+              color: Colors.blue,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Text(
+                  username,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 24,
                   ),
-                  SizedBox(height: 8),
-                  Text(
-                    user.email,
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                    ),
+                ),
+                const SizedBox(height: 8),
+                Text(
+                  email,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
-            ListTile(
-              leading: Icon(Icons.home),
-              title: Text('Home'),
-              onTap: () {
-                // Handle home menu item tap
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.settings),
-              title: Text('Settings'),
-              onTap: () {
-                // Handle settings menu item tap
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.exit_to_app),
-              title: Text('Logout'),
-              onTap: () {
-                // Handle logout menu item tap
-                Navigator.pop(context);
-              },
-            ),
-          ],
-        ),
-      ),
-      endDrawer: Drawer(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.blue,
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Text(
-                    'Trip Info',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 24,
-                    ),
-                  ),
-                  SizedBox(height: 8),
-                  Text(
-                    'Destination: ${trip.destination}\nDate: ${trip.date}',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
+          ),
+          ListTile(
+            leading: const Icon(Icons.home),
+            title: const Text('Home'),
+            onTap: () {
+              // Handle home menu item tap
+              Navigator.pop(context);
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.settings),
+            title: const Text('Settings'),
+            onTap: () {
+              // Handle settings menu item tap
+              Navigator.pop(context);
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.exit_to_app),
+            title: const Text('Logout'),
+            onTap: () {
+              // Handle logout menu item tap
+              Navigator.pop(context);
+            },
+          ),
+        ],
       ),
     );
   }

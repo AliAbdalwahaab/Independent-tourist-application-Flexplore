@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:indeoendent_tourist_app_main/recommended_page.dart';
+import 'package:indeoendent_tourist_app_main/side_menu.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -13,6 +14,14 @@ class HomePage extends StatelessWidget {
           appBar: flexploreAppBar(),
           backgroundColor: const Color(0xfff6f1f1),
           body: const RecommendedPage(),
+          drawer: const LeftSubMenu(
+            username: "John Doe",
+            email: "johndoe@example.com",
+          ),
+          endDrawer: const RightSubMenu(
+            tripDestination: "Paris",
+            tripDate: "2023-08-15",
+          ),
         ));
   }
 
@@ -45,41 +54,6 @@ class HomePage extends StatelessWidget {
       elevation: 0,
       centerTitle: true,
       backgroundColor: const Color(0xff146c94),
-      leading: GestureDetector(
-        onTap: () {
-          //TODO WHEN TAPPED CODE GOES HERE
-        },
-        child: Container(
-          margin: const EdgeInsets.all(10),
-          alignment: Alignment.center,
-          decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
-          child: SvgPicture.asset(
-            'assets/icons/drawer_icon.svg',
-            height: 20,
-            width: 20,
-            colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
-          ),
-        ),
-      ),
-      actions: [
-        GestureDetector(
-          onTap: () {
-            //TODO WHEN TAPPED CODE GOES HERE
-          },
-          child: Container(
-            margin: const EdgeInsets.all(10),
-            alignment: Alignment.center,
-            decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
-            child: SvgPicture.asset(
-              'assets/icons/profile_icon.svg',
-              height: 50,
-              width: 50,
-              colorFilter:
-                  const ColorFilter.mode(Colors.white, BlendMode.srcIn),
-            ),
-          ),
-        )
-      ],
     );
   }
 }

@@ -21,7 +21,7 @@ class RecommendedPage extends StatelessWidget {
                     imageName: 'elmoezz.jpg',
                     time: 120,
                     money: 120,
-                    review: 3,
+                    review: 2,
                     era: 'islamic era',
                     stops: 4,
                   ),
