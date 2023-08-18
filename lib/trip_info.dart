@@ -1,7 +1,4 @@
-
 import 'package:flutter/material.dart';
-
-
 
 class TripInfo extends StatelessWidget {
   const TripInfo({Key? key}) : super(key: key);
@@ -10,22 +7,73 @@ class TripInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:  Scaffold(
-        body:
-        Container(
+      home: Scaffold(
+        body: Container(
           color: const Color(0xfff6f1f1),
           child: Center(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
                 Container(
-                  height: 300, //change according to the size of the map and other widgets
+                  height:
+                      250, //change according to the size of the map and other widgets
                 ),
+                const AreaAndTheme(),
                 StopsComponent(),
               ],
             ),
           ),
         ),
+      ),
+    );
+  }
+}
+
+class AreaAndTheme extends StatelessWidget {
+  const AreaAndTheme({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Card(
+      margin: EdgeInsets.all(5),
+      color: Color.fromARGB(255, 92, 174, 241),
+      child: Column(
+        children: [
+          SizedBox(
+            height: 10,
+          ),
+          Text(
+            'EL Moez Street', //change according to the name of the trip
+            style: TextStyle(fontSize: 35),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Text(
+            'Islamic Era', //change according to the era of the trip
+            style: TextStyle(fontSize: 25),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Row(mainAxisAlignment: MainAxisAlignment.start, children: [
+            SizedBox(
+              width: 20,
+            ),
+            Text(
+              '120 mins', //change according to the time of the trip
+              style: TextStyle(fontSize: 20),
+            ),
+            Spacer(),
+            Text(
+              '\$120', //change according to the price of the trip
+              style: TextStyle(fontSize: 20),
+            ),
+            SizedBox(
+              width: 20,
+            ),
+          ]),
+        ],
       ),
     );
   }
@@ -74,7 +122,9 @@ class StopsComponent extends StatelessWidget {
                         child: Row(
                           children: [
                             SizedBox(width: size.width * 0.1),
-                            const Icon(Icons.arrow_right_outlined,),
+                            const Icon(
+                              Icons.arrow_right_outlined,
+                            ),
                             Text(stops[i]),
                           ],
                         ),
@@ -95,7 +145,7 @@ class StopsComponent extends StatelessWidget {
                             height: 20.0,
                             width: 20.0,
                             decoration: BoxDecoration(
-                              color: Colors.blue,//const Color(0xff19a7ce),
+                              color: Colors.blue, //const Color(0xff19a7ce),
                               borderRadius: BorderRadius.circular(20),
                             ),
                           ),
