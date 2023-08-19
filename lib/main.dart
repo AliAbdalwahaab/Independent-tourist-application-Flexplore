@@ -7,7 +7,7 @@ void main() {
   runApp(const MaterialApp(
     debugShowCheckedModeBanner: false,
     home: Scaffold(
-      body: HomePage(),
+      body: TripInfo(),
     ),
   ));
 //  runApp(const TripInfo());

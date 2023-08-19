@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:indeoendent_tourist_app_main/buttons/start_button.dart';
 
 class TripInfo extends StatelessWidget {
   const TripInfo({Key? key}) : super(key: key);
@@ -20,6 +21,7 @@ class TripInfo extends StatelessWidget {
                 ),
                 const AreaAndTheme(),
                 StopsComponent(),
+                Center(child: StartButton(onTap: () {})),
               ],
             ),
           ),
@@ -104,9 +106,15 @@ class StopsComponent extends StatelessWidget {
             alignment: Alignment.centerLeft,
             child: Padding(
               padding: const EdgeInsets.only(left: 30.0),
-              child: Text(
-                '$noOfStops stops',
-                style: const TextStyle(fontSize: 19),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    '$noOfStops stops',
+                    style: const TextStyle(fontSize: 19),
+                  ),
+                  IconButton(onPressed: editTrip, icon: const Icon(Icons.edit)),
+                ],
               ),
             ),
           ),
@@ -158,5 +166,9 @@ class StopsComponent extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  void editTrip() {
+    print('the trip is modified');
   }
 }
