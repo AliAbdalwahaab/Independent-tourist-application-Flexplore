@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:indeoendent_tourist_app_main/buttons/start_button.dart';
 
+import 'homePage.dart';
+
 class TripInfo extends StatelessWidget {
   const TripInfo({Key? key}) : super(key: key);
 
@@ -9,15 +11,22 @@ class TripInfo extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        appBar: AppBar(
+          leading: BackButton(),
+        ),
         body: Container(
           color: const Color(0xfff6f1f1),
           child: Center(
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
+              // crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Container(
                   height:
-                      250, //change according to the size of the map and other widgets
+                      20, //change according to the size of the map and other widgets
+                ),
+                const Image(
+                  image: NetworkImage(
+                      'https://img.youm7.com/ArticleImgs/2022/4/3/72444-%D8%B4%D8%A7%D8%B1%D8%B9-%D8%A7%D9%84%D9%85%D8%B9%D8%B2-%D9%84%D9%8A%D9%84%D8%A7.jpg'),
                 ),
                 const AreaAndTheme(),
                 StopsComponent(),
@@ -170,5 +179,23 @@ class StopsComponent extends StatelessWidget {
 
   void editTrip() {
     print('the trip is modified');
+  }
+}
+
+class BackButton extends StatelessWidget {
+  BackButton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return IconButton(
+      icon: const Icon(Icons.arrow_back_ios),
+      onPressed: () {
+        //go to the main page
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const HomePage()),
+        );
+      },
+    );
   }
 }
