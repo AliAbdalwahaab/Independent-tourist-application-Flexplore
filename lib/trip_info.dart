@@ -12,7 +12,7 @@ class TripInfo extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          leading: BackButton(),
+          leading: const BackButton(),
         ),
         body: Container(
           color: const Color(0xfff6f1f1),
