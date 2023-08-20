@@ -10,7 +10,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  DefaultTabController(
-        length: 10,
+        length: 3,
         child: Scaffold(
           appBar: flexploreAppBar(),
           backgroundColor:  Color(0xfff6f1f1),
