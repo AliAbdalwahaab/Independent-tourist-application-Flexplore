@@ -12,7 +12,7 @@ class TripInfo extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          leading: BackButton(),
+          leading: const BackButton(),
         ),
         body: Container(
           color: const Color(0xfff6f1f1),
@@ -30,13 +30,17 @@ class TripInfo extends StatelessWidget {
                 ),
                 const AreaAndTheme(),
                 StopsComponent(),
-                Center(child: StartButton(onTap: () {})),
+                Center(child: StartButton(onTap: startTrip)),
               ],
             ),
           ),
         ),
       ),
     );
+  }
+
+  void startTrip() {
+    print('the trip is started');
   }
 }
 
@@ -183,7 +187,7 @@ class StopsComponent extends StatelessWidget {
 }
 
 class BackButton extends StatelessWidget {
-  BackButton({super.key});
+  const BackButton({super.key});
 
   @override
   Widget build(BuildContext context) {
