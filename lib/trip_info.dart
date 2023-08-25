@@ -3,6 +3,18 @@ import 'package:indeoendent_tourist_app_main/buttons/start_button.dart';
 
 import 'homePage.dart';
 
+class Stop {
+  final String name;
+  final String description;
+  final String imageUrl;
+
+  Stop({
+    required this.name,
+    required this.description,
+    required this.imageUrl,
+  });
+}
+
 class TripInfo extends StatelessWidget {
   const TripInfo({Key? key}) : super(key: key);
 
@@ -97,12 +109,27 @@ class AreaAndTheme extends StatelessWidget {
 class StopsComponent extends StatelessWidget {
   StopsComponent({Key? key}) : super(key: key);
 
-  final List<String> stops = [
-    'Galaa Bridge',
-    'Azza Ice cream',
-    'Sea View',
-    'Shalaby horse Riding',
-    'Stop 5'
+  final List<Stop> stops = [
+    Stop(
+      name: 'Galaa Bridge',
+      description: 'A historic bridge over the river.',
+      imageUrl: 'https://example.com/galaa_bridge.jpg',
+    ),
+    Stop(
+      name: 'Azza Ice cream',
+      description: 'A historic bridge over the river.',
+      imageUrl: 'https://example.com/galaa_bridge.jpg',
+    ),
+    Stop(
+      name: 'Sea View',
+      description: 'A historic bridge over the river.',
+      imageUrl: 'https://example.com/galaa_bridge.jpg',
+    ),
+    Stop(
+      name: 'Shalaby horse Riding',
+      description: 'A historic bridge over the river.',
+      imageUrl: 'https://example.com/galaa_bridge.jpg',
+    )
   ];
 
   @override
@@ -136,43 +163,48 @@ class StopsComponent extends StatelessWidget {
                 shrinkWrap: true,
                 itemCount: stops.length,
                 itemBuilder: (context, i) {
-                  return Stack(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(32),
-                        child: Row(
-                          children: [
-                            SizedBox(width: size.width * 0.1),
-                            const Icon(
-                              Icons.arrow_right_outlined,
-                            ),
-                            Text(stops[i]),
-                          ],
+                  return GestureDetector(
+                    onTap: () {
+                      _showStopDetails(context, stops[i]);
+                    },
+                    child: Stack(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(32),
+                          child: Row(
+                            children: [
+                              SizedBox(width: size.width * 0.1),
+                              const Icon(
+                                Icons.arrow_right_outlined,
+                              ),
+                              Text(stops[i].name),
+                            ],
+                          ),
                         ),
-                      ),
-                      Positioned(
-                        left: 40,
-                        child: Container(
-                          height: size.height * 0.6,
-                          width: 1.0,
-                          color: Colors.grey.shade400,
-                        ),
-                      ),
-                      Positioned(
-                        bottom: 5,
-                        child: Padding(
-                          padding: const EdgeInsets.all(30.0),
+                        Positioned(
+                          left: 40,
                           child: Container(
-                            height: 20.0,
-                            width: 20.0,
-                            decoration: BoxDecoration(
-                              color: Colors.blue, //const Color(0xff19a7ce),
-                              borderRadius: BorderRadius.circular(20),
+                            height: size.height * 0.6,
+                            width: 1.0,
+                            color: Colors.grey.shade400,
+                          ),
+                        ),
+                        Positioned(
+                          bottom: 5,
+                          child: Padding(
+                            padding: const EdgeInsets.all(30.0),
+                            child: Container(
+                              height: 20.0,
+                              width: 20.0,
+                              decoration: BoxDecoration(
+                                color: Colors.blue, //const Color(0xff19a7ce),
+                                borderRadius: BorderRadius.circular(20),
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   );
                 }),
           ),
@@ -184,6 +216,31 @@ class StopsComponent extends StatelessWidget {
   void editTrip() {
     print('the trip is modified');
   }
+}
+
+void _showStopDetails(BuildContext context, Stop stop) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return Dialog(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Image.network(stop.imageUrl),
+            Text(stop.name,
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+            Text(stop.description),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: Text('Close'),
+            ),
+          ],
+        ),
+      );
+    },
+  );
 }
 
 class BackButton extends StatelessWidget {
