@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:indeoendent_tourist_app_main/feedback/feedback_page.dart';
 
 class DuringTripPage extends StatelessWidget {
   const DuringTripPage({super.key});
@@ -59,7 +60,7 @@ class DuringTripPage extends StatelessWidget {
                   )
               ),
               onPressed: (){
-                //TODO CODE FOR ENDING THE TRIP GOES HERE!
+                runApp(const FeedBack());
               },
               child: const Text("End Trip"),
             ),
@@ -109,6 +110,7 @@ class DuringTripPage extends StatelessWidget {
   }
 }
 
+
 class MyDrawer extends StatelessWidget {
   const MyDrawer({super.key});
 
@@ -118,25 +120,28 @@ class MyDrawer extends StatelessWidget {
       child: ListView(
         padding: EdgeInsets.zero,
         children: [
+          const Divider(),
+          const Divider(),
+          const Divider(),
           ListTile(
             title: const Text('Edit Trip'),
             onTap: () {
               // Add your Edit Trip functionality here
-              //Navigator.pop(context); // Close the drawer
+              // Navigator.pop(context); // Close the drawer
             },
           ),
           ListTile(
             title: const Text('Report a Problem'),
             onTap: () {
               // Add your Report a Problem functionality here
-              //Navigator.pop(context); // Close the drawer
+              // Navigator.pop(context); // Close the drawer
             },
           ),
           ListTile(
             title: const Text('Give Feedback'),
             onTap: () {
               // Add your Give Feedback functionality here
-              //Navigator.pop(context); // Close the drawer
+              // Navigator.pop(context); // Close the drawer
             },
           ),
         ],
