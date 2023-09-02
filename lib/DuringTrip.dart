@@ -5,13 +5,16 @@ class DuringTripPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: duringTripPageAppBar(),
-      drawer: const Drawer(),
-      bottomNavigationBar: duringTripPageBottomAppBar(),
-      backgroundColor: const Color(0xff146c94),
+    return MaterialApp(
+      home: Scaffold(
+        appBar: duringTripPageAppBar(),
+        drawer: const MyDrawer(),
+        bottomNavigationBar: duringTripPageBottomAppBar(),
+        backgroundColor: const Color(0xff146c94),
+      ),
     );
   }
+
 
   BottomAppBar duringTripPageBottomAppBar(){
     return BottomAppBar(
@@ -101,6 +104,42 @@ class DuringTripPage extends StatelessWidget {
             )
           ),
         ),
+      ),
+    );
+  }
+}
+
+class MyDrawer extends StatelessWidget {
+  const MyDrawer({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Drawer(
+      child: ListView(
+        padding: EdgeInsets.zero,
+        children: [
+          ListTile(
+            title: const Text('Edit Trip'),
+            onTap: () {
+              // Add your Edit Trip functionality here
+              //Navigator.pop(context); // Close the drawer
+            },
+          ),
+          ListTile(
+            title: const Text('Report a Problem'),
+            onTap: () {
+              // Add your Report a Problem functionality here
+              //Navigator.pop(context); // Close the drawer
+            },
+          ),
+          ListTile(
+            title: const Text('Give Feedback'),
+            onTap: () {
+              // Add your Give Feedback functionality here
+              //Navigator.pop(context); // Close the drawer
+            },
+          ),
+        ],
       ),
     );
   }
