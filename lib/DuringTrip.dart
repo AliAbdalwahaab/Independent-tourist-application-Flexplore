@@ -95,6 +95,7 @@ class DuringTripPage extends StatelessWidget {
         ),
         child: TextField(
           decoration: InputDecoration(
+            hintText: "Search in Trip",
             filled: true,
             fillColor: Colors.white,
             contentPadding: const EdgeInsets.all(15),
