@@ -11,7 +11,7 @@ class ActiveStopWidget extends StatelessWidget {
 
   const ActiveStopWidget(
     this.stop, {
-    super.key, 
+    super.key,
     required this.skipStop,
   });
 
@@ -28,96 +28,106 @@ class ActiveStopWidget extends StatelessWidget {
             ), // Replace StopImage with your actual widget
 
             // Overlay the information
-            Positioned(
-              top: 140,
-              left: 10,
-              right: 10,
-              bottom: 0,
-              child: Flexible(
-                child: Row(
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Text(
-                          "NEXT STOP",
-                          style: GoogleFonts.roboto(
-                            textStyle: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 20,
-                                letterSpacing: 1.2,
-                                fontWeight: FontWeight.w400),
-                          ),
-                        ),
-                        Text(
-                          stop.name,
-                          style:
-                              const TextStyle(color: Colors.white, fontSize: 28),
-                        ),
-                      ],
-                    ),
-                    const Spacer(),
-                    Container(
-                      decoration: const BoxDecoration(
-                        border: Border(
-                          left: BorderSide(color: Colors.white, width: 1),
+
+            Row(
+              children: [
+                const SizedBox(
+                  width: 10,
+                ),
+                Container(
+                  height: 30.0,
+                  width: 30.0,
+                  decoration: BoxDecoration(
+                    color: Colors.white, //const Color(0xff19a7ce),
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                ),
+                const SizedBox(
+                  width: 10,
+                ),
+                SizedBox(
+                  width: 150,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        "NEXT STOP",
+                        style: GoogleFonts.roboto(
+                          textStyle: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                              letterSpacing: 1.2,
+                              fontWeight: FontWeight.w400),
                         ),
                       ),
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 16.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                      Text(
+                        stop.name,
+                        style:
+                            const TextStyle(color: Colors.white, fontSize: 27),
+                      ),
+                    ],
+                  ),
+                ),
+                const Spacer(),
+                Container(
+                  decoration: const BoxDecoration(
+                    border: Border(
+                      left: BorderSide(color: Colors.white, width: 1),
+                    ),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 16.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
                           children: [
-                            Row(
-                              children: [
-                                Transform.flip(
-                                  flipX: true,
-                                  child: Transform.rotate(
-                                    angle: 270 * math.pi / 180,
-                                    child: const Icon(
-                                      FontAwesomeIcons.shoePrints,
-                                      color: Colors.white,
-                                      size: 20,
-                                    ),
-                                  ),
+                            Transform.flip(
+                              flipX: true,
+                              child: Transform.rotate(
+                                angle: 270 * math.pi / 180,
+                                child: const Icon(
+                                  FontAwesomeIcons.shoePrints,
+                                  color: Colors.white,
+                                  size: 20,
                                 ),
-                                const SizedBox(width: 10),
-                                Text(
-                                  '${stop.distance}  m',
-                                  style: const TextStyle(
-                                      color: Colors.white, fontSize: 16),
-                                ),
-                              ],
+                              ),
                             ),
-                            const SizedBox(height: 10),
-                            Row(
-                              children: [
-                                const Icon(Icons.timer,
-                                    color: Colors.white, size: 20),
-                                const SizedBox(
-                                  width: 10,
-                                ),
-                                Text(
-                                  '${stop.avgTime}  mins',
-                                  style: const TextStyle(
-                                      color: Colors.white, fontSize: 16),
-                                ),
-                              ],
+                            const SizedBox(width: 10),
+                            Text(
+                              '${stop.distance}  m',
+                              style: const TextStyle(
+                                  color: Colors.white, fontSize: 16),
                             ),
                           ],
                         ),
-                      ),
+                        const SizedBox(height: 10),
+                        Row(
+                          children: [
+                            const Icon(Icons.timer,
+                                color: Colors.white, size: 20),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              '${stop.avgTime}  mins',
+                              style: const TextStyle(
+                                  color: Colors.white, fontSize: 16),
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
-                  ],
+                  ),
                 ),
-              ),
+              ],
             ),
           ],
         ),
         const SizedBox(height: 15),
         Padding(
-          padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
+          padding: const EdgeInsets.fromLTRB(35, 0, 16, 0),
           child: ElevatedButton.icon(
             onPressed:skipStop,
             icon: const Icon(Icons.play_arrow),
@@ -139,7 +149,7 @@ class ActiveStopWidget extends StatelessWidget {
         ),
         const SizedBox(height: 15),
         Padding(
-          padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
+          padding: const EdgeInsets.fromLTRB(35, 0, 16, 0),
           child: Container(
             decoration: BoxDecoration(
               color: const Color(0xFF146c94),

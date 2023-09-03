@@ -11,8 +11,22 @@ class NonActiveStopWidget extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
       child: Row(
         children: [
+          Container(
+            height: 20.0,
+            width: 20.0,
+            decoration: !stop.isFinished
+                ? BoxDecoration(
+                    color: const Color(0xFF19a7ce), //const Color(0xff19a7ce),
+                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(width: 2, color: Colors.white))
+                : BoxDecoration(
+                    color: const Color.fromARGB(255, 217, 237, 240), //const Color(0xff19a7ce),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+          ),
           const SizedBox(
             height: 40,
+            width: 10,
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
