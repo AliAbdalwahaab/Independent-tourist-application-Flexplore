@@ -7,30 +7,33 @@ class NonActiveStopWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        const SizedBox(
-          height: 40,
-        ),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              stop.name,
-              style: const TextStyle(color: Colors.white, fontSize: 16),
-            ),
-            Text(
-              "${stop.distance} Km Away.",
-              style: const TextStyle(
-                  color: Color.fromARGB(222, 255, 255, 255), fontSize: 14),
-            ),
-          ],
-        ),
-        const Spacer(),
-        !stop.isFinished
-            ? const Icon(Icons.edit, color: Colors.white, size: 20)
-            : const Icon(null),
-      ],
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
+      child: Row(
+        children: [
+          const SizedBox(
+            height: 40,
+          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                stop.name,
+                style: const TextStyle(color: Colors.white, fontSize: 16),
+              ),
+              Text(
+                "${stop.distance} Km Away.",
+                style: const TextStyle(
+                    color: Color.fromARGB(222, 255, 255, 255), fontSize: 14),
+              ),
+            ],
+          ),
+          const Spacer(),
+          !stop.isFinished
+              ? const Icon(Icons.edit, color: Colors.white, size: 20)
+              : const Icon(null),
+        ],
+      ),
     );
   }
 }
