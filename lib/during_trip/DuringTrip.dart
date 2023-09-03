@@ -10,7 +10,7 @@ class DuringTripPage extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: duringTripPageAppBar(),
-        body: const TripScrollableArea(),
+        body: const TripScrollableArea(tripNum: 1,), //hard coded to be always trip1 , when starting strip this number should be passed from there
         drawer: const MyDrawer(),
         bottomNavigationBar: duringTripPageBottomAppBar(),
         backgroundColor: const Color.fromARGB(255, 70, 178, 228),

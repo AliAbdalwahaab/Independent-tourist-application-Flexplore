@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:indeoendent_tourist_app_main/during_trip/stop.dart';
 import 'package:indeoendent_tourist_app_main/during_trip/stop_widget.dart';
+import 'package:indeoendent_tourist_app_main/models/trips.dart';
 
 class TripScrollableArea extends StatefulWidget {
-  const TripScrollableArea({super.key});
+  const TripScrollableArea({super.key,required this.tripNum});
+
+  final int tripNum;
 
   @override
   State<TripScrollableArea> createState() => _TripScrollableAreaState();
@@ -11,19 +14,25 @@ class TripScrollableArea extends StatefulWidget {
 }
 
 class _TripScrollableAreaState extends State<TripScrollableArea> {
-  List<Stop> items = List<Stop>.generate(
-    20,
-    (index) => Stop(
-        name: 'Stop $index',
-        avgTime: 10,
-        distance: 100,
-        isFinished: index == 0,
-        isActive: index == 1 ? true : false,
-        description: "This is a description"),
-  );
+   int? tripNum;
+   late List<Stop> items;
+
+
+  @override
+  void initState() {
+    super.initState();
+    tripNum = widget.tripNum;
+    items = Stop.getTripStops(tripNum);
+  }
+
+
+
+
 
   @override
   Widget build(BuildContext context) {
+
+
     return Scaffold(
       backgroundColor: const Color(0xFF19a7ce),
       body: Padding(
