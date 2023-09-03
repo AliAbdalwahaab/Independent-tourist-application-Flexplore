@@ -228,13 +228,13 @@ void _showStopDetails(BuildContext context, Stop stop) {
           children: [
             Image.network(stop.imageUrl),
             Text(stop.name,
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
             Text(stop.description),
             ElevatedButton(
               onPressed: () {
                 Navigator.pop(context);
               },
-              child: Text('Close'),
+              child: const Text('Close'),
             ),
           ],
         ),
