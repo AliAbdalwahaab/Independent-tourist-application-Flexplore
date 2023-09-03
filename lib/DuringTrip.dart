@@ -9,15 +9,15 @@ class DuringTripPage extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: duringTripPageAppBar(),
+        body: const StopImage(),
         drawer: const MyDrawer(),
         bottomNavigationBar: duringTripPageBottomAppBar(),
-        backgroundColor: const Color(0xff146c94),
+        backgroundColor: const Color.fromARGB(255, 70, 178, 228),
       ),
     );
   }
 
-
-  BottomAppBar duringTripPageBottomAppBar(){
+  BottomAppBar duringTripPageBottomAppBar() {
     return BottomAppBar(
       child: Container(
         color: Colors.blue,
@@ -31,9 +31,7 @@ class DuringTripPage extends StatelessWidget {
             ),
             const Text(
               "2.3 KM",
-              style: TextStyle(
-                  color: Colors.white
-              ),
+              style: TextStyle(color: Colors.white),
             ),
             const Spacer(),
             const Icon(
@@ -42,9 +40,7 @@ class DuringTripPage extends StatelessWidget {
             ),
             const Text(
               "00 : 00 : 00",
-              style: TextStyle(
-                  color: Colors.white
-              ),
+              style: TextStyle(color: Colors.white),
             ),
             const Spacer(),
             TextButton(
@@ -52,14 +48,10 @@ class DuringTripPage extends StatelessWidget {
                   backgroundColor: MaterialStateProperty.all(Colors.red),
                   foregroundColor: MaterialStateProperty.all(Colors.white),
                   elevation: MaterialStateProperty.all(0),
-                  shape: MaterialStateProperty.all(
-                      RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(18.0),
-                          side: const BorderSide(color: Colors.red)
-                      )
-                  )
-              ),
-              onPressed: (){
+                  shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(18.0),
+                      side: const BorderSide(color: Colors.red)))),
+              onPressed: () {
                 runApp(const FeedBack());
               },
               child: const Text("End Trip"),
@@ -71,46 +63,36 @@ class DuringTripPage extends StatelessWidget {
     );
   }
 
-  AppBar duringTripPageAppBar(){
+  AppBar duringTripPageAppBar() {
     return AppBar(
       elevation: 0,
       backgroundColor: Colors.blue,
       centerTitle: true,
       title: Container(
-        margin: const EdgeInsets.only(
-          top: 30,
-          left: 20,
-          right: 20,
-          bottom: 30
-        ),
+        margin: const EdgeInsets.only(top: 30, left: 20, right: 20, bottom: 30),
         height: 35,
-        decoration: BoxDecoration(
-          boxShadow: [
-            BoxShadow(
-              color: const Color(0xff1D1617).withOpacity(0.11),
-              blurRadius: 40,
-              spreadRadius: 0.0,
-            )
-          ]
-        ),
+        decoration: BoxDecoration(boxShadow: [
+          BoxShadow(
+            color: const Color(0xff1D1617).withOpacity(0.11),
+            blurRadius: 40,
+            spreadRadius: 0.0,
+          )
+        ]),
         child: TextField(
           decoration: InputDecoration(
-            hintText: "Search in Trip",
-            filled: true,
-            fillColor: Colors.white,
-            contentPadding: const EdgeInsets.all(15),
-            suffixIcon: const Icon(Icons.search),
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(100),
-              borderSide: BorderSide.none
-            )
-          ),
+              hintText: "Search in Trip",
+              filled: true,
+              fillColor: Colors.white,
+              contentPadding: const EdgeInsets.all(15),
+              suffixIcon: const Icon(Icons.search),
+              border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(100),
+                  borderSide: BorderSide.none)),
         ),
       ),
     );
   }
 }
-
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({super.key});
@@ -146,6 +128,39 @@ class MyDrawer extends StatelessWidget {
             },
           ),
         ],
+      ),
+    );
+  }
+}
+
+class StopImage extends StatefulWidget {
+  const StopImage({super.key});
+
+  @override
+  State<StopImage> createState() => _StopImageState();
+}
+
+class _StopImageState extends State<StopImage> {
+  @override
+  Widget build(BuildContext context) {
+    return ShaderMask(
+      shaderCallback: (Rect bounds) {
+        return const LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [
+            Color.fromARGB(255, 103, 197, 240),
+            Color.fromARGB(255, 255, 255, 255),
+            Color.fromARGB(255, 103, 197, 240)
+          ],
+          stops: [0.0, 0.5, 1.0],
+        ).createShader(bounds);
+      },
+      child: Image.asset(
+        './assets/images/dog.png', // Replace with your image URL
+        width: double.infinity, // Adjust the width as needed
+        height: 250, // Adjust the height as needed
+        fit: BoxFit.cover,
       ),
     );
   }
