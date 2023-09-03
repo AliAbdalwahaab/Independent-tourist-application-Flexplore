@@ -3,12 +3,17 @@ import 'package:indeoendent_tourist_app_main/during_trip/stop.dart';
 import 'dart:math' as math;
 import 'package:google_fonts/google_fonts.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:indeoendent_tourist_app_main/during_trip/stop_widget.dart';
+import 'package:indeoendent_tourist_app_main/during_trip/trip_scrollable_area.dart';
 
 class ActiveStopWidget extends StatelessWidget {
   final Stop stop;
+  final void Function() skipStop;
+
   const ActiveStopWidget(
     this.stop, {
-    super.key,
+    super.key, 
+    required this.skipStop,
   });
 
   @override
@@ -93,10 +98,10 @@ class ActiveStopWidget extends StatelessWidget {
         ),
         const SizedBox(height: 15),
         ElevatedButton.icon(
-          onPressed: () {},
+          onPressed:skipStop,
           icon: const Icon(Icons.play_arrow),
           label: Ink(
-            child: const Text("SKIP TO NEXT STOP"),
+            child: const Text("NEXT STOP"),
           ),
           style: ButtonStyle(
             backgroundColor: MaterialStateProperty.all(Colors.white),
