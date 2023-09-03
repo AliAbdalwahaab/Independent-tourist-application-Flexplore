@@ -10,6 +10,7 @@ class TripScrollableArea extends StatefulWidget {
 
   @override
   State<TripScrollableArea> createState() => _TripScrollableAreaState();
+
 }
 
 class _TripScrollableAreaState extends State<TripScrollableArea> {
@@ -38,7 +39,7 @@ class _TripScrollableAreaState extends State<TripScrollableArea> {
                   return Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      StopWidget(stop: items[index]),
+                      StopWidget(stop: items[index], skipStop:skipStop,),
                       const SizedBox(height: 10),
                     ],
                   );
@@ -50,4 +51,20 @@ class _TripScrollableAreaState extends State<TripScrollableArea> {
       ),
     );
   }
+
+
+void skipStop() {
+    setState(() {
+      for (int i = 0; i < items.length; i++) {
+        if (items[i].isActive) {
+          items[i].isActive = false;
+          items[i].isFinished = true;
+          i != items.length - 1 ? items[i + 1].isActive = true : null;
+          break;
+          }
+        }
+      }
+    );
+  }
+  
 }

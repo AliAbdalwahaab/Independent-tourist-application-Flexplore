@@ -7,9 +7,12 @@ import 'package:indeoendent_tourist_app_main/during_trip/stop_image.dart';
 
 class ActiveStopWidget extends StatelessWidget {
   final Stop stop;
+  final void Function() skipStop;
+
   const ActiveStopWidget(
     this.stop, {
-    super.key,
+    super.key, 
+    required this.skipStop,
   });
 
   @override
@@ -114,10 +117,10 @@ class ActiveStopWidget extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
           child: ElevatedButton.icon(
-            onPressed: () {},
+            onPressed:skipStop,
             icon: const Icon(Icons.play_arrow),
             label: Ink(
-              child: const Text("SKIP TO NEXT STOP"),
+              child: const Text("NEXT STOP"),
             ),
             style: ButtonStyle(
               backgroundColor: MaterialStateProperty.all(Colors.white),
