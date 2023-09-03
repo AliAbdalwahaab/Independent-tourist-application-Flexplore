@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:indeoendent_tourist_app_main/during_trip/trip_scrollable_area.dart';
 import 'package:indeoendent_tourist_app_main/feedback/feedback_page.dart';
 
 class DuringTripPage extends StatelessWidget {
@@ -9,7 +10,7 @@ class DuringTripPage extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: duringTripPageAppBar(),
-        body: const StopImage(),
+        body: const TripScrollableArea(),
         drawer: const MyDrawer(),
         bottomNavigationBar: duringTripPageBottomAppBar(),
         backgroundColor: const Color.fromARGB(255, 70, 178, 228),
