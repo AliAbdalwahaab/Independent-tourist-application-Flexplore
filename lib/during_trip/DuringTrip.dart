@@ -10,7 +10,9 @@ class DuringTripPage extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: duringTripPageAppBar(),
-        body: const TripScrollableArea(tripNum: 1,), //hard coded to be always trip1 , when starting strip this number should be passed from there
+        body: const TripScrollableArea(
+          tripNum: 1,
+        ), //hard coded to be always trip1 , when starting strip this number should be passed from there
         drawer: const MyDrawer(),
         bottomNavigationBar: duringTripPageBottomAppBar(),
         backgroundColor: const Color.fromARGB(255, 70, 178, 228),
@@ -129,39 +131,6 @@ class MyDrawer extends StatelessWidget {
             },
           ),
         ],
-      ),
-    );
-  }
-}
-
-class StopImage extends StatefulWidget {
-  const StopImage({super.key});
-
-  @override
-  State<StopImage> createState() => _StopImageState();
-}
-
-class _StopImageState extends State<StopImage> {
-  @override
-  Widget build(BuildContext context) {
-    return ShaderMask(
-      shaderCallback: (Rect bounds) {
-        return const LinearGradient(
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-          colors: [
-            Color.fromARGB(255, 103, 197, 240),
-            Color.fromARGB(255, 255, 255, 255),
-            Color.fromARGB(255, 103, 197, 240)
-          ],
-          stops: [0.0, 0.5, 1.0],
-        ).createShader(bounds);
-      },
-      child: Image.asset(
-        './assets/images/dog.png', // Replace with your image URL
-        width: double.infinity, // Adjust the width as needed
-        height: 250, // Adjust the height as needed
-        fit: BoxFit.cover,
       ),
     );
   }
