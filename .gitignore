@@ -26,3 +26,8 @@ doc/api/
 .flutter-plugins
 .flutter-plugins-dependencies
 *.xml
+.idea/libraries/Dart_Packages.xml
+.idea/libraries/Dart_SDK.xml
+.idea/misc.xml
+macos/Flutter/GeneratedPluginRegistrant.swift
+windows/flutter/generated_plugins.cmake
