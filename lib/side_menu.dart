@@ -13,35 +13,35 @@ class RightSubMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
+      child: ListView(
+        padding: EdgeInsets.zero,
         children: [
-          DrawerHeader(
-            decoration: const BoxDecoration(
-              color: Colors.blue,
+          const DrawerHeader(
+            decoration: BoxDecoration(
+              color: Colors.blue
             ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                const Text(
-                  'Trip Info',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 24,
-                  ),
-                ),
-                const SizedBox(height: 8),
-                Text(
-                  'Destination: $tripDestination\nDate: $tripDate',
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
-                  ),
-                ),
-              ],
-            ),
+              child: Text("Drawer Header")
           ),
+          ListTile(
+            title: const Text("Account Settings"),
+            onTap: (){},
+          ),
+          ListTile(
+            title: const Text("Info and Safety"),
+            onTap: (){},
+          ),
+          ListTile(
+            title: const Text("Rate Us"),
+            onTap: (){},
+          ),
+          ListTile(
+            title: const Text("Share This App"),
+            onTap: (){},
+          ),
+          ListTile(
+            title: const Text("Feedback Form"),
+            onTap: (){},
+          )
         ],
       ),
     );

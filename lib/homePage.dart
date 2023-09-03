@@ -1,5 +1,5 @@
+
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:indeoendent_tourist_app_main/recommended_page.dart';
 import 'package:indeoendent_tourist_app_main/side_menu.dart';
 
@@ -11,8 +11,8 @@ class HomePage extends StatelessWidget {
     return DefaultTabController(
         length: 3,
         child: Scaffold(
-          appBar: flexploreAppBar(),
-          backgroundColor: Color(0xfff6f1f1),
+          appBar: flexploreAppBar(context),
+          backgroundColor: const Color(0xfff6f1f1),
           body: const TabBarView(
             children: [
               RecommendedPage(),
@@ -28,10 +28,11 @@ class HomePage extends StatelessWidget {
             tripDestination: "Paris",
             tripDate: "2023-08-15",
           ),
-        ));
+        )
+    );
   }
 
-  AppBar flexploreAppBar() {
+  AppBar flexploreAppBar(BuildContext context) {
     return AppBar(
       title: const Text(
         "Flexplore Logo",
@@ -60,6 +61,16 @@ class HomePage extends StatelessWidget {
       elevation: 0,
       centerTitle: true,
       backgroundColor: const Color(0xff146c94),
+      actions: [
+        Builder(
+          builder: (context) => IconButton(
+            onPressed: (){
+              Scaffold.of(context).openEndDrawer();
+            },
+            icon: const Icon(Icons.account_circle_outlined)
+          )
+        )
+      ],
     );
   }
 }
