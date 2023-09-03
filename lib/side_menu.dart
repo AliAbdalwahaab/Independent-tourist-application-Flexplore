@@ -24,23 +24,33 @@ class RightSubMenu extends StatelessWidget {
           ),
           ListTile(
             title: const Text("Account Settings"),
-            onTap: (){},
+            onTap: (){
+              //TODO CODE TO ACCOUNT SETTINGS GOES HERE
+            },
           ),
           ListTile(
             title: const Text("Info and Safety"),
-            onTap: (){},
+            onTap: (){
+              //TODO CODE TO INFO AND SAFETY GOES HERE
+            },
           ),
           ListTile(
             title: const Text("Rate Us"),
-            onTap: (){},
+            onTap: (){
+              //TODO CODE FOR RATING US GOES HERE
+            },
           ),
           ListTile(
             title: const Text("Share This App"),
-            onTap: (){},
+            onTap: (){
+              //TODO CODE TO SHARING THE APP GOES HERE
+            },
           ),
           ListTile(
             title: const Text("Feedback Form"),
-            onTap: (){},
+            onTap: (){
+              //TODO CODE TO FEEDBACK FORM GOES HERE
+            },
           )
         ],
       ),
