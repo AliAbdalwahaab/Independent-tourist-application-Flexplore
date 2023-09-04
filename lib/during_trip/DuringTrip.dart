@@ -55,7 +55,7 @@ class DuringTripPage extends StatelessWidget {
                       borderRadius: BorderRadius.circular(18.0),
                       side: const BorderSide(color: Colors.red)))),
               onPressed: () {
-                runApp(const FeedBack());
+                runApp( const FeedBack());
               },
               child: const Text("End Trip"),
             ),

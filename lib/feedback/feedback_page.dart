@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:indeoendent_tourist_app_main/feedback/rating_stars.dart';
 
 class FeedBack extends StatelessWidget {
   const FeedBack({super.key});
@@ -19,7 +20,8 @@ class FeedBack extends StatelessWidget {
           backgroundColor: Theme.of(context).colorScheme.onPrimary,
           toolbarHeight: 120,
         ),
-        body: const Text('rating'),
+        //INTFINTIY HEIGHT
+        body: SizedBox(height: double.infinity, child: RatingStars()),
         bottomNavigationBar: Padding(
           padding: const EdgeInsets.all(18.0),
           child: Row(
