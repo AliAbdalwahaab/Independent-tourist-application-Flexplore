@@ -31,27 +31,25 @@ class FeedBack extends StatelessWidget {
                 onPressed: () {},
                 icon: const Icon(Icons.arrow_forward),
                 label: const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+                  padding: EdgeInsets.symmetric(horizontal: 1, vertical: 16),
                   child: Text(
                     'SKIP FEEDBACK',
-                    style: TextStyle(fontSize: 20),
+                    style: TextStyle(fontSize: 14),
                   ),
                 ),
                 style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20))),
               ),
-              const SizedBox(
-                width: 12,
-              ),
+              const Spacer(),
               ElevatedButton.icon(
                 onPressed: () {},
                 icon: const Icon(Icons.check),
                 label: const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+                  padding: EdgeInsets.symmetric(horizontal: 1, vertical: 16),
                   child: Text(
                     'SUBMIT FEEDBACK',
-                    style: TextStyle(fontSize: 20),
+                    style: TextStyle(fontSize: 14),
                   ),
                 ),
                 style: ElevatedButton.styleFrom(
