@@ -228,7 +228,8 @@ void _showStopDetails(BuildContext context, Stop stop) {
           children: [
             Image.network(stop.imageUrl),
             Text(stop.name,
-                style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                style:
+                    const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
             Text(stop.description),
             ElevatedButton(
               onPressed: () {

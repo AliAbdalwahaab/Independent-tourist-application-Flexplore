@@ -1,9 +1,44 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:indeoendent_tourist_app_main/during_trip/trip_scrollable_area.dart';
 import 'package:indeoendent_tourist_app_main/feedback/feedback_page.dart';
 
-class DuringTripPage extends StatelessWidget {
+class DuringTripPage extends StatefulWidget {
   const DuringTripPage({super.key});
+
+  @override
+  _DuringTripPageState createState() => _DuringTripPageState();
+}
+
+class _DuringTripPageState extends State<DuringTripPage> {
+  late Timer _timer;
+  int _secondsElapsed = 0;
+  //bool _tripStarted = false;
+
+  @override
+  void initState() {
+    startTimer();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _timer.cancel();
+    super.dispose();
+  }
+
+  void startTimer() {
+    const oneSecond = Duration(seconds: 1);
+    _timer = Timer.periodic(oneSecond, (timer) {
+      setState(() {
+        _secondsElapsed++;
+      });
+    });
+  }
+
+  void stopTimer() {
+    _timer.cancel();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +47,7 @@ class DuringTripPage extends StatelessWidget {
         appBar: duringTripPageAppBar(),
         body: const TripScrollableArea(
           tripNum: 1,
-        ), //hard coded to be always trip1 , when starting strip this number should be passed from there
+        ),
         drawer: const MyDrawer(),
         bottomNavigationBar: duringTripPageBottomAppBar(),
         backgroundColor: const Color.fromARGB(255, 70, 178, 228),
@@ -41,8 +76,8 @@ class DuringTripPage extends StatelessWidget {
               Icons.access_time_filled,
               color: Colors.white,
             ),
-            const Text(
-              "00 : 00 : 00",
+            Text(
+              formatTime(_secondsElapsed),
               style: TextStyle(color: Colors.white),
             ),
             const Spacer(),
@@ -55,7 +90,8 @@ class DuringTripPage extends StatelessWidget {
                       borderRadius: BorderRadius.circular(18.0),
                       side: const BorderSide(color: Colors.red)))),
               onPressed: () {
-                runApp( const FeedBack());
+                stopTimer();
+                runApp(const FeedBack());
               },
               child: const Text("End Trip"),
             ),
@@ -83,17 +119,26 @@ class DuringTripPage extends StatelessWidget {
         ]),
         child: TextField(
           decoration: InputDecoration(
-              hintText: "Search in Trip",
-              filled: true,
-              fillColor: Colors.white,
-              contentPadding: const EdgeInsets.all(15),
-              suffixIcon: const Icon(Icons.search),
-              border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(100),
-                  borderSide: BorderSide.none)),
+            hintText: "Search in Trip",
+            filled: true,
+            fillColor: Colors.white,
+            contentPadding: const EdgeInsets.all(15),
+            suffixIcon: const Icon(Icons.search),
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(100),
+              borderSide: BorderSide.none,
+            ),
+          ),
         ),
       ),
     );
+  }
+
+  String formatTime(int seconds) {
+    final int hours = seconds ~/ 3600;
+    final int minutes = (seconds % 3600) ~/ 60;
+    final int remainingSeconds = seconds % 60;
+    return '$hours : ${minutes.toString().padLeft(2, '0')} : ${remainingSeconds.toString().padLeft(2, '0')}';
   }
 }
 
