@@ -4,6 +4,7 @@ import 'package:indeoendent_tourist_app_main/during_trip/trip_scrollable_area.da
 import 'package:indeoendent_tourist_app_main/feedback/feedback_page.dart';
 
 class DuringTripPage extends StatefulWidget {
+  static double totalDistanceWalked = 0.0;
   const DuringTripPage({super.key});
 
   @override
@@ -67,9 +68,9 @@ class _DuringTripPageState extends State<DuringTripPage> {
               Icons.directions_walk,
               color: Colors.white,
             ),
-            const Text(
-              "2.3 KM",
-              style: TextStyle(color: Colors.white),
+            Text(
+              "${double.parse(DuringTripPage.totalDistanceWalked.toStringAsFixed(1))} M",
+              style: const TextStyle(color: Colors.white),
             ),
             const Spacer(),
             const Icon(
@@ -78,7 +79,7 @@ class _DuringTripPageState extends State<DuringTripPage> {
             ),
             Text(
               formatTime(_secondsElapsed),
-              style: TextStyle(color: Colors.white),
+              style: const TextStyle(color: Colors.white),
             ),
             const Spacer(),
             TextButton(

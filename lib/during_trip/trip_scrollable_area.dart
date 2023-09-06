@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:indeoendent_tourist_app_main/during_trip/DuringTrip.dart';
 import 'package:indeoendent_tourist_app_main/during_trip/stop.dart';
 import 'package:indeoendent_tourist_app_main/during_trip/stop_widget.dart';
 import 'package:indeoendent_tourist_app_main/models/trips.dart';
@@ -72,6 +73,7 @@ class _TripScrollableAreaState extends State<TripScrollableArea> {
         if (items[i].isActive) {
           items[i].isActive = false;
           items[i].isFinished = true;
+          DuringTripPage.totalDistanceWalked += items[i].distance;
           i != items.length - 1 ? items[i + 1].isActive = true : null;
           break;
         }

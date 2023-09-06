@@ -15,7 +15,8 @@ class Stop {
       required this.isActive,
       required this.description,
       required this.isFinished,
-      required this.image});
+      required this.image}
+  );
 
   static List<Stop> getTripStops(tripNum) {
     final List<Stop> stops = allTrips['trip$tripNum']!;
