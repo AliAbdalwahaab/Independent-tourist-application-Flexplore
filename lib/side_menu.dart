@@ -46,12 +46,6 @@ class RightSubMenu extends StatelessWidget {
               //TODO CODE TO SHARING THE APP GOES HERE
             },
           ),
-          ListTile(
-            title: const Text("Feedback Form"),
-            onTap: (){
-              //TODO CODE TO FEEDBACK FORM GOES HERE
-            },
-          )
         ],
       ),
     );

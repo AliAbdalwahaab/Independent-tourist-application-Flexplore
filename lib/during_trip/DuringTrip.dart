@@ -156,23 +156,9 @@ class MyDrawer extends StatelessWidget {
           const Divider(),
           const Divider(),
           ListTile(
-            title: const Text('Edit Trip'),
-            onTap: () {
-              // Add your Edit Trip functionality here
-              // Navigator.pop(context); // Close the drawer
-            },
-          ),
-          ListTile(
             title: const Text('Report a Problem'),
             onTap: () {
               // Add your Report a Problem functionality here
-              // Navigator.pop(context); // Close the drawer
-            },
-          ),
-          ListTile(
-            title: const Text('Give Feedback'),
-            onTap: () {
-              // Add your Give Feedback functionality here
               // Navigator.pop(context); // Close the drawer
             },
           ),
