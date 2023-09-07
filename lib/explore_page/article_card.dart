@@ -57,7 +57,7 @@ class ArticleCard extends StatelessWidget {
                               MaterialPageRoute(
                                 builder: (context) => ArticlePage(
                                   title: trip.name,
-                                  body: allAppArticles['Elmoezz']!
+                                  body: allAppArticles[trip.name]!
                                 )
                               )
                             );
