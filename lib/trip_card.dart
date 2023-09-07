@@ -114,7 +114,7 @@ class DestinationPhoto extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: 0,
+            top: 10,
             child: Text(
               text,
               textAlign: TextAlign.center,
