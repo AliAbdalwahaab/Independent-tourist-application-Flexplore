@@ -8,7 +8,7 @@ class ArticlePage extends StatefulWidget {
   });
 
   final String title;
-  final Column body;
+  final Padding body;
 
   @override
   State<ArticlePage> createState() => _ArticlePageState();

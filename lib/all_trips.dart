@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:indeoendent_tourist_app_main/during_trip/stop.dart';
 import 'package:indeoendent_tourist_app_main/trip.dart';
 
@@ -36,20 +35,4 @@ Map<String, Trip> allAppTrips = {
       ),
     ],
   ),
-};
-
-Map<String, Column> allAppArticles = {
-  'Elmoezz' : const Column(
-    children: [
-      Text(
-        "Elmoezz Street is one of the oldest streets in Cairo, and it is one of the most important tourist attractions in Cairo, as it is one of the most important Islamic monuments in Cairo, and it is one of the most important tourist attractions in Cairo, as it is one of the most important Islamic monuments in Cairo, and it is one of the most important tourist attractions in Cairo, as it is one of the most important Islamic monuments in Cairo, and it is one of the most important tourist attractions in Cairo, as it is one of the most important Islamic monuments in Cairo, and it is one of the most important tourist attractions in Cairo, as it is one of the most important Islamic monuments in Cairo, and it is one of the most important tourist attractions in Cairo, as it is one of the most important Islamic monuments in Cairo, and it is one of the most important tourist attractions in Cairo, as it is one of the most important Islamic monuments in Cairo",
-        textAlign: TextAlign.justify,
-        style: TextStyle(
-          color: Colors.black,
-          fontSize: 16,
-          height: 1.5
-        ),
-      )
-    ],
-  )
 };
