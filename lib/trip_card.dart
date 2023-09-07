@@ -102,7 +102,7 @@ class DestinationPhoto extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 250,
+      height: 200,
       width: 500,
       child: Stack(
         alignment: Alignment.center,

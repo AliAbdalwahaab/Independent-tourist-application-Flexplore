@@ -1,13 +1,14 @@
 import 'package:indeoendent_tourist_app_main/models/trips.dart';
 
 class Stop {
-  String name;
+  final String name;
   double avgTime;
   double distance;
   bool isActive;
   String description;
   bool isFinished;
   String image;
+  final String directions;
   Stop(
       {required this.name,
       required this.avgTime,
@@ -15,8 +16,8 @@ class Stop {
       required this.isActive,
       required this.description,
       required this.isFinished,
-      required this.image}
-  );
+      required this.image,
+      required this.directions});
 
   static List<Stop> getTripStops(tripNum) {
     final List<Stop> stops = allTrips['trip$tripNum']!;
