@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:indeoendent_tourist_app_main/all_trips.dart';
+import 'package:indeoendent_tourist_app_main/explore_page/ArticlePage.dart';
 import 'package:indeoendent_tourist_app_main/trip.dart';
 import 'package:indeoendent_tourist_app_main/trip_card.dart';
 
@@ -49,7 +51,16 @@ class ArticleCard extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) => ArticlePage(
+                                  title: trip.name,
+                                  body: allAppArticles['Elmoezz']!
+                                )
+                              )
+                            );
+                          },
                           style: ButtonStyle(
                             backgroundColor: const MaterialStatePropertyAll(
                               Color(0xFF146c94),

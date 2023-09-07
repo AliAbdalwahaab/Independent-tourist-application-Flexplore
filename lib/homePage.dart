@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:indeoendent_tourist_app_main/explore_page/explore_page.dart';
 import 'package:indeoendent_tourist_app_main/recommended_page.dart';
 import 'package:indeoendent_tourist_app_main/side_menu.dart';
 
@@ -16,8 +17,10 @@ class HomePage extends StatelessWidget {
           body: const TabBarView(
             children: [
               RecommendedPage(),
-              Center(child: Text('YOU ARE NOW IN THE HISTORY TAB')),
-              Center(child: Text('YOU ARE NOW IN THE EXPLORE TAB')),
+              Center(
+                child: Text('YOU ARE NOW IN THE HISTORY TAB')
+              ),
+              ExplorePage(),
             ],
           ),
           drawer: const LeftSubMenu(
@@ -37,7 +40,10 @@ class HomePage extends StatelessWidget {
       title: const Text(
         "Flexplore Logo",
         style: TextStyle(
-            color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
+          color: Colors.white,
+          fontSize: 20,
+          fontWeight: FontWeight.bold
+        ),
       ),
       bottom: const PreferredSize(
         preferredSize: Size(0, 50),

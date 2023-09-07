@@ -92,7 +92,11 @@ class _DuringTripPageState extends State<DuringTripPage> {
                       side: const BorderSide(color: Colors.red)))),
               onPressed: () {
                 stopTimer();
-                runApp(const FeedBack());
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                      builder: (context) => const FeedBack()
+                  )
+                );
               },
               child: const Text("End Trip"),
             ),
