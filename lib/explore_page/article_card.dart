@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:indeoendent_tourist_app_main/all_trips.dart';
 import 'package:indeoendent_tourist_app_main/explore_page/ArticlePage.dart';
 import 'package:indeoendent_tourist_app_main/trip.dart';
 import 'package:indeoendent_tourist_app_main/trip_card.dart';
+
+import '../all_articles.dart';
 
 class ArticleCard extends StatelessWidget {
   const ArticleCard({required this.trip, super.key, required this.brief});
