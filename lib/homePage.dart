@@ -1,6 +1,6 @@
-
 import 'package:flutter/material.dart';
 import 'package:indeoendent_tourist_app_main/explore_page/explore_page.dart';
+import 'package:indeoendent_tourist_app_main/history_page/history_page.dart';
 import 'package:indeoendent_tourist_app_main/recommended_page.dart';
 import 'package:indeoendent_tourist_app_main/side_menu.dart';
 
@@ -17,9 +17,7 @@ class HomePage extends StatelessWidget {
           body: const TabBarView(
             children: [
               RecommendedPage(),
-              Center(
-                child: Text('YOU ARE NOW IN THE HISTORY TAB')
-              ),
+              HistoryPage(),
               ExplorePage(),
             ],
           ),
@@ -31,8 +29,7 @@ class HomePage extends StatelessWidget {
             tripDestination: "Paris",
             tripDate: "2023-08-15",
           ),
-        )
-    );
+        ));
   }
 
   AppBar flexploreAppBar(BuildContext context) {
@@ -40,10 +37,7 @@ class HomePage extends StatelessWidget {
       title: const Text(
         "Flexplore Logo",
         style: TextStyle(
-          color: Colors.white,
-          fontSize: 20,
-          fontWeight: FontWeight.bold
-        ),
+            color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
       ),
       bottom: const PreferredSize(
         preferredSize: Size(0, 50),
@@ -69,13 +63,11 @@ class HomePage extends StatelessWidget {
       backgroundColor: const Color(0xff146c94),
       actions: [
         Builder(
-          builder: (context) => IconButton(
-            onPressed: (){
-              Scaffold.of(context).openEndDrawer();
-            },
-            icon: const Icon(Icons.account_circle_outlined)
-          )
-        )
+            builder: (context) => IconButton(
+                onPressed: () {
+                  Scaffold.of(context).openEndDrawer();
+                },
+                icon: const Icon(Icons.account_circle_outlined)))
       ],
     );
   }
