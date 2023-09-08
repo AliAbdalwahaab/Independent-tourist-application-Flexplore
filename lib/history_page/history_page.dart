@@ -19,6 +19,7 @@ class _HistoryPageState extends State<HistoryPage> {
       distance: 4,
       numberOfStops: 5,
       rating: 3,
+      date: DateTime.now(),
     ),
     EndedTrip(
       name: "ELMOEZ",
@@ -28,6 +29,7 @@ class _HistoryPageState extends State<HistoryPage> {
       distance: 4,
       numberOfStops: 5,
       rating: 4,
+      date: DateTime.now(),
     ),
     // Add more EndedTrip objects as needed.
   ];

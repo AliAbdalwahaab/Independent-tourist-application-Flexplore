@@ -9,6 +9,7 @@ class EndedTrip {
   final double distance;
   final int numberOfStops;
   final int rating;
+  final DateTime date;
 
   EndedTrip(
       {required this.name,
@@ -17,5 +18,6 @@ class EndedTrip {
       required this.money,
       required this.distance,
       required this.numberOfStops,
-      required this.rating});
+      required this.rating,
+      required this.date});
 }
