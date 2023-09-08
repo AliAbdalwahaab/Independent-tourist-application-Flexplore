@@ -19,6 +19,7 @@ Map<String, Trip> allAppTrips = {
         description:
             'Elmoezz Street is one of the oldest streets in Cairo, and it is one of the most important tourist attractions in Cairo, as it is one of the most important Islamic monuments in Cairo, and it is one of the most important tourist attractions in Cairo, as it is one of the most important Islamic monuments in Cairo, and it is one of the most important tourist attractions in Cairo, as it is one of the most important Islamic monuments in Cairo, and it is one of the most important tourist attractions in Cairo, as it is one of the most important Islamic monuments in Cairo, and it is one of the most important tourist attractions in Cairo, as it is one of the most important Islamic monuments in Cairo, and it is one of the most important tourist attractions in Cairo, as it is one of the most important Islamic monuments in Cairo, and it is one of the most important tourist attractions in Cairo, as it is one of the most important Islamic monuments in Cairo',
         isFinished: false,
+        isRemoved: false,
         image: 'elmoezz.jpg',
         directions: 'https://goo.gl/maps/',
       ),
@@ -30,6 +31,7 @@ Map<String, Trip> allAppTrips = {
         description:
             'Elmoezz Street is one of the oldest streets in Cairo, and it is one of the most important tourist attractions in Cairo, as it is one of the most important Islamic monuments in Cairo, and it is one of the most important tourist attractions in Cairo, as it is one of the most important Islamic monuments in Cairo',
         isFinished: false,
+        isRemoved: false,
         image: 'elmoezz.jpg',
         directions: 'https://goo.gl/maps/',
       ),

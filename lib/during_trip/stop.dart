@@ -7,6 +7,7 @@ class Stop {
   bool isActive;
   String description;
   bool isFinished;
+  bool isRemoved;
   String image;
   final String directions;
   Stop(
@@ -16,6 +17,7 @@ class Stop {
       required this.isActive,
       required this.description,
       required this.isFinished,
+      required this.isRemoved,
       required this.image,
       required this.directions});
 

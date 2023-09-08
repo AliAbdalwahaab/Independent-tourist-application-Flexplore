@@ -18,6 +18,7 @@ class StopWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        !stop.isRemoved?
         stop.isActive
             ? Stack(children: [
                 Padding(
@@ -33,7 +34,8 @@ class StopWidget extends StatelessWidget {
                   skipStop: skipStop,
                 )
               ])
-            : NonActiveStopWidget(stop),
+            : NonActiveStopWidget(stop)
+            : SizedBox.shrink(),
       ],
     );
   }
