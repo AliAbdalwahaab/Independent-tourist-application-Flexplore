@@ -24,6 +24,7 @@ class RecommendedPage extends StatelessWidget {
                     review: 2,
                     era: 'islamic era',
                     stops: 4,
+                    tripNum: 1,
                   ),
                   TripCard(
                     text: "Elmoezz",
@@ -33,6 +34,7 @@ class RecommendedPage extends StatelessWidget {
                     review: 4,
                     era: 'islamic era',
                     stops: 4,
+                    tripNum: 2,
                   ),
                   TripCard(
                     text: "Elmoezz",
@@ -42,6 +44,7 @@ class RecommendedPage extends StatelessWidget {
                     review: 5,
                     era: 'islamic era',
                     stops: 5,
+                    tripNum: 1,
                   ),
                   TripCard(
                     text: "Elmoezz",
@@ -51,6 +54,7 @@ class RecommendedPage extends StatelessWidget {
                     review: 4,
                     era: 'islamic era',
                     stops: 4,
+                    tripNum: 2,
                   ),
                   TripCard(
                     text: "Elmoezz",
@@ -60,6 +64,7 @@ class RecommendedPage extends StatelessWidget {
                     review: 4,
                     era: 'islamic era',
                     stops: 4,
+                    tripNum: 1,
                   ),
                   TripCard(
                     text: "Elmoezz",
@@ -69,6 +74,7 @@ class RecommendedPage extends StatelessWidget {
                     review: 4,
                     era: 'islamic era',
                     stops: 4,
+                    tripNum: 2,
                   ),
                   TripCard(
                     text: "Elmoezz",
@@ -78,6 +84,7 @@ class RecommendedPage extends StatelessWidget {
                     review: 4,
                     era: 'islamic era',
                     stops: 4,
+                    tripNum: 1,
                   ),
                   TripCard(
                     text: "Elmoezz",
@@ -87,6 +94,7 @@ class RecommendedPage extends StatelessWidget {
                     review: 4,
                     era: 'islamic era',
                     stops: 4,
+                    tripNum: 2,
                   ),
                   TripCard(
                     text: "Elmoezz",
@@ -96,6 +104,7 @@ class RecommendedPage extends StatelessWidget {
                     review: 2,
                     era: 'islamic era',
                     stops: 3,
+                    tripNum: 1,
                   ),
                   TripCard(
                     text: "Elmoezz",
@@ -105,6 +114,7 @@ class RecommendedPage extends StatelessWidget {
                     review: 5,
                     era: 'islamic era',
                     stops: 4,
+                    tripNum: 2,
                   ),
                 ],
               ),

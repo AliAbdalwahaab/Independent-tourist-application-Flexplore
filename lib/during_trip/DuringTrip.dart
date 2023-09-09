@@ -5,7 +5,8 @@ import 'package:indeoendent_tourist_app_main/feedback/feedback_page.dart';
 
 class DuringTripPage extends StatefulWidget {
   static double totalDistanceWalked = 0.0;
-  const DuringTripPage({super.key});
+  final int tripNum;
+  const DuringTripPage(this.tripNum,{super.key});
 
   @override
   _DuringTripPageState createState() => _DuringTripPageState();
@@ -14,11 +15,13 @@ class DuringTripPage extends StatefulWidget {
 class _DuringTripPageState extends State<DuringTripPage> {
   late Timer _timer;
   int _secondsElapsed = 0;
+  late int tripNum;
   //bool _tripStarted = false;
 
   @override
   void initState() {
     startTimer();
+    tripNum=widget.tripNum;
     super.initState();
   }
 
@@ -46,8 +49,8 @@ class _DuringTripPageState extends State<DuringTripPage> {
     return MaterialApp(
       home: Scaffold(
         appBar: duringTripPageAppBar(),
-        body: const TripScrollableArea(
-          tripNum: 1,
+        body:  TripScrollableArea(
+          tripNum: tripNum,
         ),
         drawer: const MyDrawer(),
         bottomNavigationBar: duringTripPageBottomAppBar(),

@@ -9,7 +9,7 @@ import 'package:indeoendent_tourist_app_main/trip_info.dart';
 void main() {
   runApp(const MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: Scaffold(body: DuringTripPage()),
+    home: Scaffold(body: HomePage()),
   ));
 //  runApp(const TripInfo());
 }
