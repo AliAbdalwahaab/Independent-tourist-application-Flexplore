@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:indeoendent_tourist_app_main/buttons/start_button.dart';
 import 'package:indeoendent_tourist_app_main/during_trip/stop.dart';
+import 'package:indeoendent_tourist_app_main/recommended_page.dart';
 import 'homePage.dart';
 import 'package:indeoendent_tourist_app_main/editTrip.dart';
 import 'package:indeoendent_tourist_app_main/during_trip/DuringTrip.dart';
@@ -16,11 +17,11 @@ import 'package:indeoendent_tourist_app_main/during_trip/DuringTrip.dart';
 //     required this.imageUrl,
 //   });
 // }
-int tripNo=1;
-List<Stop> stops = Stop.getTripStops(tripNo);
+// int tripNo=1;
+// List<Stop> stops = Stop.getTripStops(tripNo);
 class TripInfo extends StatelessWidget {
-  const TripInfo({Key? key}) : super(key: key);
-
+  const TripInfo({Key? key, required this.tripNumber}) : super(key: key);
+  final tripNumber;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -44,8 +45,10 @@ class TripInfo extends StatelessWidget {
                       'https://img.youm7.com/ArticleImgs/2022/4/3/72444-%D8%B4%D8%A7%D8%B1%D8%B9-%D8%A7%D9%84%D9%85%D8%B9%D8%B2-%D9%84%D9%8A%D9%84%D8%A7.jpg'),
                 ),
                 const AreaAndTheme(),
-                StopsComponent(),
-                 Center(child: StartButton(onTap: startTrip)),
+                StopsComponent(
+                  tripNumber: tripNumber,
+                ),
+                Center(child: StartButton(onTap: startTrip)),
               ],
             ),
           ),
@@ -56,7 +59,6 @@ class TripInfo extends StatelessWidget {
 
   void startTrip() {
     print('the trip is started');
-    
   }
 }
 
@@ -111,8 +113,13 @@ class AreaAndTheme extends StatelessWidget {
 }
 
 class StopsComponent extends StatelessWidget {
-  StopsComponent({Key? key}) : super(key: key);
-
+  StopsComponent({super.key, required this.tripNumber})
+      : stops = getStops(tripNumber);
+  final int tripNumber;
+  final List<Stop> stops;
+  static List<Stop> getStops(int tripNum) {
+    return Stop.getTripStops(tripNum);
+  }
   // final List<Stop> stops = [
   //   Stop(
   //     name: 'Galaa Bridge',
@@ -139,7 +146,7 @@ class StopsComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    int noOfStops=stops.where((e) => !e.isRemoved).length;
+    int noOfStops = stops.where((e) => !e.isRemoved).length;
 
     return Expanded(
       child: Column(
@@ -158,13 +165,18 @@ class StopsComponent extends StatelessWidget {
                     '$noOfStops stops',
                     style: const TextStyle(fontSize: 19),
                   ),
-                IconButton(onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => EditTrip()),
-                );
-              }, icon: const Icon(Icons.edit)),
-                                  ],
+                  IconButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  RecommendedPage()), // this will change temporarily for a while
+                          // then i should revert it back to edit trip
+                        );
+                      },
+                      icon: const Icon(Icons.edit)),
+                ],
               ),
             ),
           ),
@@ -173,60 +185,58 @@ class StopsComponent extends StatelessWidget {
                 shrinkWrap: true,
                 itemCount: stops.length,
                 itemBuilder: (context, i) {
-                  if(stops[i].isRemoved){
-                  return SizedBox.shrink();
-                  }
-                  else {
-                  return
-                   GestureDetector(
-                    onTap: () {
-                      _showStopDetails(context, stops[i]);
-                    },
-                    child: Stack(
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.all(32),
-                              child: Row(
-                                children: [ 
-                                  SizedBox(width: size.width * 0.1),
-                                  const Icon(
-                                    Icons.arrow_right_outlined,
-                                  ),
-                                  Text(stops[i].name),  
-                                ],
+                  if (stops[i].isRemoved) {
+                    return const SizedBox.shrink();
+                  } else {
+                    return GestureDetector(
+                      onTap: () {
+                        _showStopDetails(context, stops[i]);
+                      },
+                      child: Stack(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(32),
+                                child: Row(
+                                  children: [
+                                    SizedBox(width: size.width * 0.1),
+                                    const Icon(
+                                      Icons.arrow_right_outlined,
+                                    ),
+                                    Text(stops[i].name),
+                                  ],
+                                ),
                               ),
-                            ),
-                          ],
-                        ),
-                        Positioned(
-                          left: 40,
-                          child: Container(
-                            height: size.height * 0.6,
-                            width: 1.0,
-                            color: Colors.grey.shade400,
+                            ],
                           ),
-                        ),
-                        Positioned(
-                          bottom: 5,
-                          child: Padding(
-                            padding: const EdgeInsets.all(30.0),
+                          Positioned(
+                            left: 40,
                             child: Container(
-                              height: 20.0,
-                              width: 20.0,
-                              decoration: BoxDecoration(
-                                color: Colors.blue, //const Color(0xff19a7ce),
-                                borderRadius: BorderRadius.circular(20),
+                              height: size.height * 0.6,
+                              width: 1.0,
+                              color: Colors.grey.shade400,
+                            ),
+                          ),
+                          Positioned(
+                            bottom: 5,
+                            child: Padding(
+                              padding: const EdgeInsets.all(30.0),
+                              child: Container(
+                                height: 20.0,
+                                width: 20.0,
+                                decoration: BoxDecoration(
+                                  color: Colors.blue, //const Color(0xff19a7ce),
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                      ],
-                    ),
-                  );}
+                        ],
+                      ),
+                    );
+                  }
                 }),
           ),
         ],
@@ -235,12 +245,12 @@ class StopsComponent extends StatelessWidget {
   }
 
   void editTrip() {
-      print('the trip is modified');
-    }
+    print('the trip is modified');
   }
- 
-List<Stop> getEditedTrip(){
-  return stops.where((e) => !e.isRemoved).toList();
+
+  List<Stop> getEditedTrip() {
+    return stops.where((e) => !e.isRemoved).toList();
+  }
 }
 
 void _showStopDetails(BuildContext context, Stop stop) {
