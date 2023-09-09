@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:indeoendent_tourist_app_main/during_trip/DuringTrip.dart';
+import 'package:indeoendent_tourist_app_main/trip_info.dart';
 
 class TripCard extends StatelessWidget {
   const TripCard(
@@ -10,7 +10,8 @@ class TripCard extends StatelessWidget {
       required this.time,
       required this.era,
       required this.stops,
-      super.key, required this.tripNum});
+      super.key,
+      required this.tripNum});
 
   final String text;
   final String imageName;
@@ -23,8 +24,6 @@ class TripCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-
     Icon filledStar = const Icon(
       Icons.star,
       color: Color.fromRGBO(199, 179, 0, 0.953),
@@ -35,21 +34,18 @@ class TripCard extends StatelessWidget {
       color: Color.fromRGBO(199, 179, 0, 0.953),
     );
 
-
-
-
-    return
-      GestureDetector(
-          onTap: () {
-            // Navigate to a new screen when the widget is tapped
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (context) =>  DuringTripPage(tripNum),
-              ),
-            );
-          },
-
-        child: Card(
+    return GestureDetector(
+      onTap: () {
+        // Navigate to a new screen when the widget is tapped
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => TripInfo(
+              tripNumber: tripNum,
+            ),
+          ),
+        );
+      },
+      child: Card(
         child: Column(
           children: [
             DestinationPhoto(imageName: imageName, text: text),
@@ -106,8 +102,8 @@ class TripCard extends StatelessWidget {
             )
           ],
         ),
-    ),
-      );
+      ),
+    );
   }
 }
 
