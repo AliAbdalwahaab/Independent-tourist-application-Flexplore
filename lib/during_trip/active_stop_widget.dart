@@ -126,26 +126,51 @@ class ActiveStopWidget extends StatelessWidget {
           ],
         ),
         const SizedBox(height: 15),
-        Padding(
-          padding: const EdgeInsets.fromLTRB(35, 0, 16, 0),
-          child: ElevatedButton.icon(
-            onPressed:skipStop,
-            icon: const Icon(Icons.play_arrow),
-            label: Ink(
-              child: const Text("NEXT STOP"),
-            ),
-            style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all(Colors.white),
-              foregroundColor: MaterialStateProperty.all(
-                const Color(0xFF146c94),
-              ),
-              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(18.0),
+        Row(
+          children: [
+            Padding(
+              padding: const EdgeInsets.fromLTRB(35, 0, 16, 0),
+              child: ElevatedButton.icon(
+                onPressed:skipStop,
+                icon: const Icon(Icons.play_arrow),
+                label: Ink(
+                  child: const Text("NEXT STOP"),
+                ),
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Colors.white),
+                  foregroundColor: MaterialStateProperty.all(
+                    const Color(0xFF146c94),
+                  ),
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(18.0),
+                    ),
+                  ),
                 ),
               ),
             ),
-          ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(35, 0, 16, 0),
+              child: ElevatedButton.icon(
+                onPressed:(){},
+                icon: const Icon(Icons.add_location),
+                label: Ink(
+                  child: const Text("Directions"),
+                ),
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Colors.white),
+                  foregroundColor: MaterialStateProperty.all(
+                    const Color(0xFF146c94),
+                  ),
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(18.0),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ],
         ),
         const SizedBox(height: 15),
         Padding(
