@@ -9,6 +9,45 @@ class EndedTripCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (!endedTrip.showDate) {
+      return myCard();
+    } else {
+      return Column(
+        children: [
+          Row(
+            children: [
+              const Expanded(
+                child: Divider(
+                  color: Colors.black, // You can specify the color of the line
+                  thickness: 1.0, // You can specify the thickness of the line
+                  endIndent: 10, // Adjust the length of the line to the right
+                ),
+              ),
+              Text(
+                "${endedTrip.date.day}/${endedTrip.date.month}/${endedTrip.date.year}",
+                style: GoogleFonts.ubuntu(
+                  textStyle: const TextStyle(
+                    color: Colors.black,
+                    fontSize: 20,
+                  ),
+                ),
+              ),
+              const Expanded(
+                child: Divider(
+                  color: Colors.black, // You can specify the color of the line
+                  thickness: 1.0, // You can specify the thickness of the line
+                  indent: 10, // Adjust the length of the line to the left
+                ),
+              ),
+            ],
+          ),
+          myCard(),
+        ],
+      );
+    }
+  }
+
+  Widget myCard() {
     Icon filledStar = const Icon(
       Icons.star,
       color: Color.fromRGBO(199, 179, 0, 0.953),

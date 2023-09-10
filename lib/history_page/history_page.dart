@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:indeoendent_tourist_app_main/history_page/ended_trip.dart';
 import 'package:indeoendent_tourist_app_main/history_page/ended_trip_card.dart';
+import 'package:indeoendent_tourist_app_main/history_page/final_ended_trips.dart';
 
 class HistoryPage extends StatefulWidget {
   const HistoryPage({super.key});
@@ -10,32 +11,13 @@ class HistoryPage extends StatefulWidget {
 }
 
 class _HistoryPageState extends State<HistoryPage> {
-  List<EndedTrip> endedTrips = [
-    EndedTrip(
-      name: "ELMOEZ",
-      image: "elmoezz.jpg",
-      time: 5,
-      money: 5,
-      distance: 4,
-      numberOfStops: 5,
-      rating: 3,
-      date: DateTime.now(),
-    ),
-    EndedTrip(
-      name: "ELMOEZ",
-      image: "elmoezz.jpg",
-      time: 5,
-      money: 5,
-      distance: 4,
-      numberOfStops: 5,
-      rating: 4,
-      date: DateTime.now(),
-    ),
-    // Add more EndedTrip objects as needed.
-  ];
+  List<EndedTrip> endedTrips = historyTrips;
+
+  List<EndedTrip> returnedEndedTrip = [];
 
   @override
   Widget build(BuildContext context) {
+    returnedEndedTrip = checkShowDate(endedTrips);
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
@@ -50,7 +32,7 @@ class _HistoryPageState extends State<HistoryPage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       EndedTripCard(
-                        endedTrip: endedTrips[index],
+                        endedTrip: returnedEndedTrip[index],
                       ),
                     ],
                   );
@@ -62,4 +44,21 @@ class _HistoryPageState extends State<HistoryPage> {
       ),
     );
   }
+}
+
+List<EndedTrip> checkShowDate(List<EndedTrip> endedTrips) {
+  if (endedTrips.isEmpty) {
+    return endedTrips;
+  } else if (endedTrips.length == 1) {
+    endedTrips[0].showDate = true;
+    return endedTrips;
+  } else {
+    for (int i = 0; i < endedTrips.length - 1; i++) {
+      if (endedTrips[i].date.day != endedTrips[i + 1].date.day) {
+        endedTrips[i].showDate = true;
+      }
+    }
+    endedTrips[endedTrips.length - 1].showDate = true;
+  }
+  return endedTrips.reversed.toList();
 }
