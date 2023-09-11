@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:indeoendent_tourist_app_main/buttons/start_button.dart';
 import 'package:indeoendent_tourist_app_main/during_trip/stop.dart';
-import 'package:indeoendent_tourist_app_main/editTrip.dart';
 import 'package:indeoendent_tourist_app_main/recommended_page.dart';
 import 'homePage.dart';
+import 'package:indeoendent_tourist_app_main/editTrip.dart';
+import 'package:indeoendent_tourist_app_main/during_trip/DuringTrip.dart';
 
 // class Stop {
 //   final String name;
@@ -47,7 +48,7 @@ class TripInfo extends StatelessWidget {
                 StopsComponent(
                   tripNumber: tripNumber,
                 ),
-                Center(child: StartButton(onTap: startTrip)),
+                
               ],
             ),
           ),
@@ -56,9 +57,7 @@ class TripInfo extends StatelessWidget {
     );
   }
 
-  void startTrip() {
-    print('the trip is started');
-  }
+ 
 }
 
 class AreaAndTheme extends StatelessWidget {
@@ -104,49 +103,48 @@ class AreaAndTheme extends StatelessWidget {
             SizedBox(
               width: 20,
             ),
-          ]
-          ),
+          ]),
         ],
       ),
     );
   }
 }
 
-class StopsComponent extends StatelessWidget {
+class StopsComponent extends StatefulWidget {
   StopsComponent({super.key, required this.tripNumber})
       : stops = getStops(tripNumber);
   final int tripNumber;
-  final List<Stop> stops;
+    List<Stop> stops;
+   
   static List<Stop> getStops(int tripNum) {
     return Stop.getTripStops(tripNum);
   }
-  // final List<Stop> stops = [
-  //   Stop(
-  //     name: 'Galaa Bridge',
-  //     description: 'A historic bridge over the river.',
-  //     imageUrl: 'https://example.com/galaa_bridge.jpg',
-  //   ),
-  //   Stop(
-  //     name: 'Azza Ice cream',
-  //     description: 'A historic bridge over the river.',
-  //     imageUrl: 'https://example.com/galaa_bridge.jpg',
-  //   ),
-  //   Stop(
-  //     name: 'Sea View',
-  //     description: 'A historic bridge over the river.',
-  //     imageUrl: 'https://example.com/galaa_bridge.jpg',
-  //   ),
-  //   Stop(
-  //     name: 'Shalaby horse Riding',
-  //     description: 'A historic bridge over the river.',
-  //     imageUrl: 'https://example.com/galaa_bridge.jpg',
-  //   )
-  // ];
+   List<Stop> getEditedTrip() {
+    List<Stop>temp=stops.where((e) => !e.isRemoved).toList();
+    temp[0].isActive=true;
+    return temp;
+  }
 
+  @override
+  State<StopsComponent> createState() => _StopsComponentState();
+}
+
+class _StopsComponentState extends State<StopsComponent> {
+  Future<void> editTrip(BuildContext context) async {
+    
+    
+    widget.stops = await Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) =>  EditTrip(stops:widget.stops)),
+    );
+    setState(() {});
+  }
+
+  // final List<Stop> stops = [
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    int noOfStops = stops.where((e) => !e.isRemoved).length;
+    int noOfStops = widget.stops.where((e) => !e.isRemoved).length;
 
     return Expanded(
       child: Column(
@@ -166,16 +164,10 @@ class StopsComponent extends StatelessWidget {
                     style: const TextStyle(fontSize: 19),
                   ),
                   IconButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const EditTripPage()
-                        )
-                      );
-                    },
-                    icon: const Icon(Icons.edit)
-                  ),
+                      onPressed: () {
+                        editTrip(context);
+                      },
+                      icon: const Icon(Icons.edit)),
                 ],
               ),
             ),
@@ -183,14 +175,14 @@ class StopsComponent extends StatelessWidget {
           Expanded(
             child: ListView.builder(
                 shrinkWrap: true,
-                itemCount: stops.length,
+                itemCount: widget.stops.length,
                 itemBuilder: (context, i) {
-                  if (stops[i].isRemoved) {
+                  if (widget.stops[i].isRemoved) {
                     return const SizedBox.shrink();
                   } else {
                     return GestureDetector(
                       onTap: () {
-                        _showStopDetails(context, stops[i]);
+                        _showStopDetails(context, widget.stops[i]);
                       },
                       child: Stack(
                         children: [
@@ -205,7 +197,7 @@ class StopsComponent extends StatelessWidget {
                                     const Icon(
                                       Icons.arrow_right_outlined,
                                     ),
-                                    Text(stops[i].name),
+                                    Text(widget.stops[i].name),
                                   ],
                                 ),
                               ),
@@ -239,17 +231,19 @@ class StopsComponent extends StatelessWidget {
                   }
                 }),
           ),
+          Center(child: StartButton(      onTap: startTrip,)),
         ],
       ),
     );
   }
 
-  void editTrip() {
-    print('the trip is modified');
-  }
-
   List<Stop> getEditedTrip() {
-    return stops.where((e) => !e.isRemoved).toList();
+    List<Stop>temp=widget.stops.where((e) => !e.isRemoved).toList();
+    temp[0].isActive=true;
+    return temp;
+  }
+  static void startTrip() {
+          print('The trip has started');
   }
 }
 

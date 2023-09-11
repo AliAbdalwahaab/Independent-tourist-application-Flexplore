@@ -43,9 +43,9 @@ class NonActiveStopWidget extends StatelessWidget {
             ],
           ),
           const Spacer(),
-          !stop.isFinished
-              ? const Icon(Icons.edit, color: Colors.white, size: 20)
-              : const Icon(null),
+          // !stop.isFinished
+          //     ? const Icon(Icons.edit, color: Colors.white, size: 20)
+          //     : const Icon(null),
         ],
       ),
     );

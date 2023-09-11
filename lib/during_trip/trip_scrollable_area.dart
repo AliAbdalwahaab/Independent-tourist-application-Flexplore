@@ -24,7 +24,7 @@ class _TripScrollableAreaState extends State<TripScrollableArea> {
     super.initState();
     tripNum = widget.tripNum;
     items = Stop.getTripStops(tripNum);
-    // items=getEditedTrip();
+    //items=StopsComponent.getEditedTrip();
     //this items list contains only the stops that were not removed by user
     //get the edited trip from Trip Info page instead from the 'database' 
   }
