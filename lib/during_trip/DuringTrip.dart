@@ -87,17 +87,21 @@ class _DuringTripPageState extends State<DuringTripPage> {
             const Spacer(),
             TextButton(
               style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.red),
-                  foregroundColor: MaterialStateProperty.all(Colors.white),
-                  elevation: MaterialStateProperty.all(0),
-                  shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(18.0),
-                      side: const BorderSide(color: Colors.red)))),
+                backgroundColor: MaterialStateProperty.all(Colors.red),
+                foregroundColor: MaterialStateProperty.all(Colors.white),
+                elevation: MaterialStateProperty.all(0),
+                shape: MaterialStateProperty.all(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(18.0),
+                    side: const BorderSide(color: Colors.red)
+                  )
+                )
+              ),
               onPressed: () {
                 stopTimer();
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                      builder: (context) => const FeedBack()
+                    builder: (context) => const FeedBack()
                   )
                 );
               },

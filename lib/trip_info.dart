@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:indeoendent_tourist_app_main/buttons/start_button.dart';
 import 'package:indeoendent_tourist_app_main/during_trip/stop.dart';
+import 'package:indeoendent_tourist_app_main/editTrip.dart';
 import 'package:indeoendent_tourist_app_main/recommended_page.dart';
 import 'homePage.dart';
-import 'package:indeoendent_tourist_app_main/editTrip.dart';
-import 'package:indeoendent_tourist_app_main/during_trip/DuringTrip.dart';
 
 // class Stop {
 //   final String name;
@@ -105,7 +104,8 @@ class AreaAndTheme extends StatelessWidget {
             SizedBox(
               width: 20,
             ),
-          ]),
+          ]
+          ),
         ],
       ),
     );
@@ -166,16 +166,16 @@ class StopsComponent extends StatelessWidget {
                     style: const TextStyle(fontSize: 19),
                   ),
                   IconButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) =>
-                                  RecommendedPage()), // this will change temporarily for a while
-                          // then i should revert it back to edit trip
-                        );
-                      },
-                      icon: const Icon(Icons.edit)),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const EditTripPage()
+                        )
+                      );
+                    },
+                    icon: const Icon(Icons.edit)
+                  ),
                 ],
               ),
             ),
