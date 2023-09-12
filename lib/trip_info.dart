@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:indeoendent_tourist_app_main/buttons/start_button.dart';
 import 'package:indeoendent_tourist_app_main/during_trip/stop.dart';
 import 'package:indeoendent_tourist_app_main/recommended_page.dart';
@@ -44,11 +45,12 @@ class TripInfo extends StatelessWidget {
                   image: NetworkImage(
                       'https://img.youm7.com/ArticleImgs/2022/4/3/72444-%D8%B4%D8%A7%D8%B1%D8%B9-%D8%A7%D9%84%D9%85%D8%B9%D8%B2-%D9%84%D9%8A%D9%84%D8%A7.jpg'),
                 ),
-                const AreaAndTheme(),
+                AreaAndTheme(
+                  tripNumber: tripNumber,
+                ),
                 StopsComponent(
                   tripNumber: tripNumber,
                 ),
-                
               ],
             ),
           ),
@@ -56,51 +58,52 @@ class TripInfo extends StatelessWidget {
       ),
     );
   }
-
- 
 }
 
 class AreaAndTheme extends StatelessWidget {
-  const AreaAndTheme({super.key});
+  const AreaAndTheme({super.key, required this.tripNumber});
+  final tripNumber;
 
   @override
   Widget build(BuildContext context) {
-    return const Card(
+    return Card(
       margin: EdgeInsets.all(5),
-      color: Color.fromARGB(255, 92, 174, 241),
+      color: const Color.fromARGB(255, 92, 174, 241),
       child: Column(
         children: [
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           Text(
-            'EL Moez Street', //change according to the name of the trip
-            style: TextStyle(fontSize: 35),
+            RecommendedPage.getTripName(
+                tripNumber), //change according to the name of the trip
+            style: const TextStyle(fontSize: 35),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
-          Text(
+          const Text(
             'Islamic Era', //change according to the era of the trip
             style: TextStyle(fontSize: 25),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-            SizedBox(
+            const SizedBox(
               width: 20,
             ),
             Text(
-              '120 mins', //change according to the time of the trip
-              style: TextStyle(fontSize: 20),
+              RecommendedPage.getAvgTimeForTrip(tripNumber)
+                  .toString(), //change according to the time of the trip
+              style: const TextStyle(fontSize: 20),
             ),
-            Spacer(),
-            Text(
+            const Spacer(),
+            const Text(
               '\$120', //change according to the price of the trip
               style: TextStyle(fontSize: 20),
             ),
-            SizedBox(
+            const SizedBox(
               width: 20,
             ),
           ]),
@@ -114,14 +117,15 @@ class StopsComponent extends StatefulWidget {
   StopsComponent({super.key, required this.tripNumber})
       : stops = getStops(tripNumber);
   final int tripNumber;
-    List<Stop> stops;
-   
+  List<Stop> stops;
+
   static List<Stop> getStops(int tripNum) {
     return Stop.getTripStops(tripNum);
   }
-   List<Stop> getEditedTrip() {
-    List<Stop>temp=stops.where((e) => !e.isRemoved).toList();
-    temp[0].isActive=true;
+
+  List<Stop> getEditedTrip() {
+    List<Stop> temp = stops.where((e) => !e.isRemoved).toList();
+    temp[0].isActive = true;
     return temp;
   }
 
@@ -131,11 +135,9 @@ class StopsComponent extends StatefulWidget {
 
 class _StopsComponentState extends State<StopsComponent> {
   Future<void> editTrip(BuildContext context) async {
-    
-    
     widget.stops = await Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) =>  EditTrip(stops:widget.stops)),
+      MaterialPageRoute(builder: (context) => EditTrip(stops: widget.stops)),
     );
     setState(() {});
   }
@@ -231,19 +233,23 @@ class _StopsComponentState extends State<StopsComponent> {
                   }
                 }),
           ),
-          Center(child: StartButton(      onTap: startTrip,)),
+          const Center(
+              child: StartButton(
+            onTap: startTrip,
+          )),
         ],
       ),
     );
   }
 
   List<Stop> getEditedTrip() {
-    List<Stop>temp=widget.stops.where((e) => !e.isRemoved).toList();
-    temp[0].isActive=true;
+    List<Stop> temp = widget.stops.where((e) => !e.isRemoved).toList();
+    temp[0].isActive = true;
     return temp;
   }
+
   static void startTrip() {
-          print('The trip has started');
+    print('The trip has started');
   }
 }
 
