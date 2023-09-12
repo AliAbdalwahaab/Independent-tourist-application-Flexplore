@@ -1,6 +1,3 @@
-//endedtrip is a class called EndedTrip with attributes
-//name, image, time, money, distance, number of stops and rating
-
 class EndedTrip {
   final String name;
   final String image;

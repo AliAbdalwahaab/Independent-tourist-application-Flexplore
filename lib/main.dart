@@ -5,9 +5,7 @@ import 'package:indeoendent_tourist_app_main/trip_info.dart';
 void main() {
   runApp(const MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: TripInfo(
-      tripNumber: 1,
-    ),
+    home: HomePage(),
   ));
 //  runApp(const TripInfo());
 }

@@ -90,7 +90,7 @@ class EndedTripCard extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(
-                          width: 30,
+                          width: 15,
                         ),
                         const Icon(Icons.attach_money),
                         Text(
@@ -121,7 +121,7 @@ class EndedTripCard extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(
-                          width: 20,
+                          width: 15,
                         ),
                         const Icon(Icons.location_on),
                         Text(
@@ -136,9 +136,6 @@ class EndedTripCard extends StatelessWidget {
                       ],
                     ),
                   ],
-                ),
-                const SizedBox(
-                  width: 10,
                 ),
                 Container(
                   width:
@@ -176,9 +173,6 @@ class EndedTripCard extends StatelessWidget {
                 )
               ]),
             ),
-            const SizedBox(
-              width: 20,
-            )
           ],
         ),
       ),
