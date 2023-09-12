@@ -76,7 +76,11 @@ class EndedTripCard extends StatelessWidget {
                   children: [
                     Row(
                       children: [
-                        const Icon(Icons.access_time),
+                        //making the color of icon white
+                        const Icon(
+                          Icons.access_time,
+                          color: Colors.white,
+                        ),
                         const SizedBox(
                           width: 5,
                         ),
@@ -92,7 +96,10 @@ class EndedTripCard extends StatelessWidget {
                         const SizedBox(
                           width: 15,
                         ),
-                        const Icon(Icons.attach_money),
+                        const Icon(
+                          Icons.attach_money,
+                          color: Colors.white,
+                        ),
                         Text(
                           "${endedTrip.money} USD",
                           style: GoogleFonts.ubuntu(
@@ -107,7 +114,10 @@ class EndedTripCard extends StatelessWidget {
                     const SizedBox(height: 10),
                     Row(
                       children: [
-                        const Icon(Icons.directions_run),
+                        const Icon(
+                          Icons.directions_run,
+                          color: Colors.white,
+                        ),
                         const SizedBox(
                           width: 5,
                         ),
@@ -123,7 +133,10 @@ class EndedTripCard extends StatelessWidget {
                         const SizedBox(
                           width: 15,
                         ),
-                        const Icon(Icons.location_on),
+                        const Icon(
+                          Icons.location_on,
+                          color: Colors.white,
+                        ),
                         Text(
                           "${endedTrip.numberOfStops} Stops",
                           style: GoogleFonts.ubuntu(
