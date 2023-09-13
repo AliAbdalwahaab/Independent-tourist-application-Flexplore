@@ -21,7 +21,29 @@ class FeedBack extends StatelessWidget {
           toolbarHeight: 120,
         ),
         //INTFINTIY HEIGHT
-        body: SizedBox(height: double.infinity, child: RatingStars()),
+        body: Column(
+          children: [
+            SizedBox(height: 300, child: RatingStars()),
+            const SizedBox(
+              height: 30,
+            ),
+            const SizedBox(
+              width: 400,
+              height: 70,
+              child: TextField(
+                decoration: InputDecoration(
+                  hintText: 'Tell us more...',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                  ),
+                ),
+                maxLines: 5, // <-- SEE HERE
+
+                minLines: 1, // <-- SEE HERE
+              ),
+            ),
+          ],
+        ),
         bottomNavigationBar: Padding(
           padding: const EdgeInsets.all(18.0),
           child: Row(
