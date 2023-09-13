@@ -22,7 +22,7 @@ Map<String, List<Stop>> allTrips = {
           "Sunbathe on the golden sands and swim in crystal-clear waters.",
       isFinished: false,
       isRemoved: false,
-      image: './assets/images/dog.png',
+      image: 'dog.png',
       directions: "https://maps.app.goo.gl/Vg3dncPdees9x2ee9",
     ),
     Stop(
@@ -34,7 +34,7 @@ Map<String, List<Stop>> allTrips = {
           "A mystical forest with talking animals and glowing mushrooms.",
       isFinished: false,
       isRemoved: false,
-      image: './assets/images/dog.png',
+      image: 'dog.png',
       directions: "https://maps.app.goo.gl/gEgkbVJTo3YbYsHv7",
     ),
     Stop(
@@ -45,7 +45,7 @@ Map<String, List<Stop>> allTrips = {
       description: "A serene lake with water as blue as sapphires.",
       isFinished: false,
       isRemoved: false,
-      image: './assets/images/dog.png',
+      image: 'dog.png',
       directions: "https://maps.app.goo.gl/Mox3n6Vac2t1VS4u8",
     ),
     Stop(
@@ -56,7 +56,7 @@ Map<String, List<Stop>> allTrips = {
       description: "A lighthouse that never goes out, guiding ships safely.",
       isFinished: false,
       isRemoved: false,
-      image: './assets/images/dog.png',
+      image: 'dog.png',
       directions: "https://maps.app.goo.gl/uBRFfKNF1S4HevY27",
     ),
     Stop(
@@ -67,7 +67,7 @@ Map<String, List<Stop>> allTrips = {
       description: "Rumored home of a friendly dragon.",
       isFinished: false,
       isRemoved: false,
-      image: './assets/images/dog.png',
+      image: 'dog.png',
       directions: "https://maps.app.goo.gl/DgUCBsYttRBaCfbDA",
     ),
   ],
@@ -91,7 +91,7 @@ Map<String, List<Stop>> allTrips = {
       description: "Fields of fragrant lavender in full bloom.",
       isFinished: false,
       isRemoved: false,
-      image: './assets/images/dog.png',
+      image: 'dog.png',
       directions: "https://maps.app.goo.gl/YQ7gaqS3Y29kh6Es9",
     ),
     Stop(
@@ -102,7 +102,7 @@ Map<String, List<Stop>> allTrips = {
       description: "Home to mischievous but charming pixies.",
       isFinished: false,
       isRemoved: false,
-      image: './assets/images/dog.png',
+      image: 'dog.png',
       directions: "https://maps.app.goo.gl/PAyYWKHZ9FnvUGcR7",
     ),
     Stop(
@@ -113,7 +113,7 @@ Map<String, List<Stop>> allTrips = {
       description: "A lake with water as green as emeralds.",
       isFinished: false,
       isRemoved: false,
-      image: './assets/images/dog.png',
+      image: 'dog.png',
       directions: "https://maps.app.goo.gl/nf5RuU5dARmi6DJf8",
     ),
     Stop(
@@ -124,7 +124,7 @@ Map<String, List<Stop>> allTrips = {
       description: "Ideal spot for whale watching.",
       isFinished: false,
       isRemoved: false,
-      image: './assets/images/dog.png',
+      image: 'dog.png',
       directions: "https://maps.app.goo.gl/y3DoDHfjXQKXjgUC9",
     ),
     Stop(
@@ -135,7 +135,7 @@ Map<String, List<Stop>> allTrips = {
       description: "A bustling market run by mischievous goblins.",
       isFinished: false,
       isRemoved: false,
-      image: './assets/images/dog.png',
+      image: 'dog.png',
       directions: "https://maps.app.goo.gl/cjNkiGUVyY7HZ2tD7",
     ),
     Stop(
@@ -146,7 +146,7 @@ Map<String, List<Stop>> allTrips = {
       description: "Best spot to witness the Aurora Borealis.",
       isFinished: false,
       isRemoved: false,
-      image: './assets/images/dog.png',
+      image: 'dog.png',
       directions: "https://maps.app.goo.gl/n7EBDTvBBC21K8Kp6",
     ),
   ]

@@ -1,8 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:indeoendent_tourist_app_main/feedback/rating_stars.dart';
+import 'package:indeoendent_tourist_app_main/homePage.dart';
 
-class FeedBack extends StatelessWidget {
+class FeedBack extends StatefulWidget {
   const FeedBack({super.key});
+
+  @override
+  State<FeedBack> createState() => _FeedBackState();
+}
+
+class _FeedBackState extends State<FeedBack> {
+  void returnHome() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const HomePage()),
+    );
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -32,8 +47,11 @@ class FeedBack extends StatelessWidget {
               height: 120,
               child: TextField(
                 keyboardType: TextInputType.multiline,
-                decoration: InputDecoration(hintText: 'Tell us more...',
-                  border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(20.0)),),
+                decoration: InputDecoration(
+                  hintText: 'Tell us more...',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                  ),
                 ),
                 maxLines: 5, // <-- SEE HERE
 
@@ -48,7 +66,7 @@ class FeedBack extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               ElevatedButton.icon(
-                onPressed: () {},
+                onPressed: returnHome,
                 icon: const Icon(Icons.arrow_forward),
                 label: const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 1, vertical: 16),
@@ -63,7 +81,7 @@ class FeedBack extends StatelessWidget {
               ),
               const Spacer(),
               ElevatedButton.icon(
-                onPressed: () {},
+                onPressed: returnHome,
                 icon: const Icon(Icons.check),
                 label: const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 1, vertical: 16),

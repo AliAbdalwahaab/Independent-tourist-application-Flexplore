@@ -10,6 +10,7 @@ class Trip {
     required this.era,
     required this.numberOfStops,
     required this.stops,
+    required this.tripNum,
   });
   final String name;
   final String imageName;
@@ -19,4 +20,5 @@ class Trip {
   final String era;
   final int numberOfStops;
   final List<Stop> stops;
+  final int tripNum;
 }

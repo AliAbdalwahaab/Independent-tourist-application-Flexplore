@@ -24,7 +24,7 @@ class ActiveStopWidget extends StatelessWidget {
           children: [
             // Background Image
             StopImage(
-              image: stop.image,
+              image: "assets/images/${stop.image}",
             ), // Replace StopImage with your actual widget
 
             // Overlay the information
@@ -131,7 +131,7 @@ class ActiveStopWidget extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.fromLTRB(35, 0, 16, 0),
               child: ElevatedButton.icon(
-                onPressed:skipStop,
+                onPressed: skipStop,
                 icon: const Icon(Icons.play_arrow),
                 label: Ink(
                   child: const Text("NEXT STOP"),
@@ -152,7 +152,7 @@ class ActiveStopWidget extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.fromLTRB(35, 0, 16, 0),
               child: ElevatedButton.icon(
-                onPressed:(){},
+                onPressed: () {},
                 icon: const Icon(Icons.add_location),
                 label: Ink(
                   child: const Text("Directions"),

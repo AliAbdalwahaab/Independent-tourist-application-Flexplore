@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:indeoendent_tourist_app_main/explore_page/ArticlePage.dart';
 import 'package:indeoendent_tourist_app_main/trip.dart';
 import 'package:indeoendent_tourist_app_main/trip_card.dart';
+import 'package:indeoendent_tourist_app_main/trip_info.dart';
 
 import '../all_articles.dart';
 
@@ -13,6 +14,11 @@ class ArticleCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    void startTrip() {
+      Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) => TripInfo(tripNumber: trip.tripNum)));
+    }
+
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 2.0, vertical: 8),
       child: Card(
@@ -53,14 +59,10 @@ class ArticleCard extends StatelessWidget {
                       children: [
                         ElevatedButton(
                           onPressed: () {
-                            Navigator.of(context).push(
-                              MaterialPageRoute(
+                            Navigator.of(context).push(MaterialPageRoute(
                                 builder: (context) => ArticlePage(
-                                  title: trip.name,
-                                  body: allAppArticles[trip.name]!
-                                )
-                              )
-                            );
+                                    title: trip.name,
+                                    body: allAppArticles[trip.name]!)));
                           },
                           style: ButtonStyle(
                             backgroundColor: const MaterialStatePropertyAll(
@@ -82,7 +84,7 @@ class ArticleCard extends StatelessWidget {
                           ),
                         ),
                         ElevatedButton(
-                          onPressed: () {},
+                          onPressed: startTrip,
                           style: ButtonStyle(
                             backgroundColor: const MaterialStatePropertyAll(
                               Color.fromARGB(255, 53, 113, 96),

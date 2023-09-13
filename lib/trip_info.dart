@@ -134,7 +134,7 @@ class StopsComponent extends StatefulWidget {
 }
 
 class _StopsComponentState extends State<StopsComponent> {
-  get tripNumber => null;
+  get tripNumber => widget.tripNumber;
 
   Future<void> editTrip(BuildContext context) async {
     widget.stops = await Navigator.push(

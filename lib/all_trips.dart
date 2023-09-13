@@ -10,6 +10,7 @@ Map<String, Trip> allAppTrips = {
     time: 3,
     era: 'Islamic',
     numberOfStops: 5,
+    tripNum: 1,
     stops: [
       Stop(
         name: 'Elmoezz Street',
