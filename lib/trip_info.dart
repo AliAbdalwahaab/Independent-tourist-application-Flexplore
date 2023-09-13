@@ -134,6 +134,8 @@ class StopsComponent extends StatefulWidget {
 }
 
 class _StopsComponentState extends State<StopsComponent> {
+  get tripNumber => null;
+
   Future<void> editTrip(BuildContext context) async {
     widget.stops = await Navigator.push(
       context,
@@ -233,7 +235,7 @@ class _StopsComponentState extends State<StopsComponent> {
                   }
                 }),
           ),
-          const Center(
+          Center(
               child: StartButton(
             onTap: startTrip,
           )),
@@ -248,8 +250,17 @@ class _StopsComponentState extends State<StopsComponent> {
     return temp;
   }
 
-  static void startTrip() {
-    print('The trip has started');
+  void startTrip() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+          builder: (context) => DuringTripPage(
+                tripNum: tripNumber,
+                stops: StopsComponent(
+                  tripNumber: tripNumber,
+                ).getEditedTrip(),
+              )),
+    );
   }
 }
 

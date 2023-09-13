@@ -1,12 +1,19 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:indeoendent_tourist_app_main/during_trip/stop.dart';
 import 'package:indeoendent_tourist_app_main/during_trip/trip_scrollable_area.dart';
 import 'package:indeoendent_tourist_app_main/feedback/feedback_page.dart';
 
 class DuringTripPage extends StatefulWidget {
+  const DuringTripPage({
+    Key? key,
+    required this.stops,
+    required this.tripNum,
+  }) : super(key: key);
+
   static double totalDistanceWalked = 0.0;
   final int tripNum;
-  const DuringTripPage(this.tripNum,{super.key});
+  final List<Stop> stops;
 
   @override
   _DuringTripPageState createState() => _DuringTripPageState();
@@ -21,7 +28,7 @@ class _DuringTripPageState extends State<DuringTripPage> {
   @override
   void initState() {
     startTimer();
-    tripNum=widget.tripNum;
+    tripNum = widget.tripNum;
     super.initState();
   }
 
@@ -49,7 +56,7 @@ class _DuringTripPageState extends State<DuringTripPage> {
     return MaterialApp(
       home: Scaffold(
         appBar: duringTripPageAppBar(),
-        body:  TripScrollableArea(
+        body: TripScrollableArea(
           tripNum: tripNum,
         ),
         drawer: const MyDrawer(),
@@ -87,23 +94,16 @@ class _DuringTripPageState extends State<DuringTripPage> {
             const Spacer(),
             TextButton(
               style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(Colors.red),
-                foregroundColor: MaterialStateProperty.all(Colors.white),
-                elevation: MaterialStateProperty.all(0),
-                shape: MaterialStateProperty.all(
-                  RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(18.0),
-                    side: const BorderSide(color: Colors.red)
-                  )
-                )
-              ),
+                  backgroundColor: MaterialStateProperty.all(Colors.red),
+                  foregroundColor: MaterialStateProperty.all(Colors.white),
+                  elevation: MaterialStateProperty.all(0),
+                  shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(18.0),
+                      side: const BorderSide(color: Colors.red)))),
               onPressed: () {
                 stopTimer();
                 Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => const FeedBack()
-                  )
-                );
+                    MaterialPageRoute(builder: (context) => const FeedBack()));
               },
               child: const Text("End Trip"),
             ),
