@@ -29,13 +29,11 @@ class FeedBack extends StatelessWidget {
             ),
             const SizedBox(
               width: 400,
-              height: 70,
+              height: 120,
               child: TextField(
-                decoration: InputDecoration(
-                  hintText: 'Tell us more...',
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(20.0)),
-                  ),
+                keyboardType: TextInputType.multiline,
+                decoration: InputDecoration(hintText: 'Tell us more...',
+                  border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(20.0)),),
                 ),
                 maxLines: 5, // <-- SEE HERE
 
