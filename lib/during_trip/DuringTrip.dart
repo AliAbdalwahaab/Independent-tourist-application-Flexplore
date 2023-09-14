@@ -60,7 +60,7 @@ class _DuringTripPageState extends State<DuringTripPage> {
       home: Scaffold(
         appBar: duringTripPageAppBar(),
         body: TripScrollableArea(
-          tripNum: tripNum,
+          items: widget.stops,
         ),
         drawer: const MyDrawer(),
         bottomNavigationBar: duringTripPageBottomAppBar(),

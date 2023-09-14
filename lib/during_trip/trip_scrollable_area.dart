@@ -7,9 +7,9 @@ import 'package:dotted_line/dotted_line.dart';
 import 'package:indeoendent_tourist_app_main/trip_info.dart';
 
 class TripScrollableArea extends StatefulWidget {
-  const TripScrollableArea({super.key, required this.tripNum});
+  const TripScrollableArea({super.key, required this.items});
 
-  final int tripNum;
+  final List<Stop> items;
 
   @override
   State<TripScrollableArea> createState() => _TripScrollableAreaState();
@@ -22,8 +22,12 @@ class _TripScrollableAreaState extends State<TripScrollableArea> {
   @override
   void initState() {
     super.initState();
-    tripNum = widget.tripNum;
-    items = Stop.getTripStops(tripNum);
+   // tripNum = widget.tripNum;
+    items = widget.items;
+    for(var i=1;i<items.length;i++){
+      items[i].isActive=false;
+      items[i].isFinished=false;
+    }
     //items=StopsComponent.getEditedTrip();
     //this items list contains only the stops that were not removed by user
     //get the edited trip from Trip Info page instead from the 'database' 

@@ -246,7 +246,9 @@ class _StopsComponentState extends State<StopsComponent> {
 
   List<Stop> getEditedTrip() {
     List<Stop> temp = widget.stops.where((e) => !e.isRemoved).toList();
+    if(temp.isNotEmpty){
     temp[0].isActive = true;
+    }
     return temp;
   }
 
