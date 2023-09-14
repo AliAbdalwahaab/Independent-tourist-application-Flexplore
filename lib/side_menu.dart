@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:indeoendent_tourist_app_main/account_setting/accountSetting.dart';
 
 class RightSubMenu extends StatelessWidget {
   const RightSubMenu({
@@ -17,32 +18,35 @@ class RightSubMenu extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: [
           const DrawerHeader(
-            decoration: BoxDecoration(
-              color: Colors.blue
-            ),
-              child: Text("Drawer Header")
-          ),
+              decoration: BoxDecoration(color: Colors.blue),
+              child: Text("Drawer Header")),
           ListTile(
             title: const Text("Account Settings"),
-            onTap: (){
-              //TODO CODE TO ACCOUNT SETTINGS GOES HERE
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => AccountSettingsPage(),
+                  settings: RouteSettings(name: 'AccountSettingsPage'),
+                ),
+              );
             },
           ),
           ListTile(
             title: const Text("Info and Safety"),
-            onTap: (){
+            onTap: () {
               //TODO CODE TO INFO AND SAFETY GOES HERE
             },
           ),
           ListTile(
             title: const Text("Rate Us"),
-            onTap: (){
+            onTap: () {
               //TODO CODE FOR RATING US GOES HERE
             },
           ),
           ListTile(
             title: const Text("Share This App"),
-            onTap: (){
+            onTap: () {
               //TODO CODE TO SHARING THE APP GOES HERE
             },
           ),

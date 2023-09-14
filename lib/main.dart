@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:indeoendent_tourist_app_main/account_setting/accountSetting.dart';
+import 'package:indeoendent_tourist_app_main/homePage.dart';
 //feedpack page
 
 import 'login_page.dart'; // Login page -- Fares
@@ -26,7 +28,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      home: LoginPage(),
+      home: HomePage(),
     );
   }
 }
