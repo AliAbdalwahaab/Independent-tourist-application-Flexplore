@@ -33,6 +33,17 @@ In conclusion, our innovative travel application empowers independent tourists t
 ##
 ##
 # Design Blueprints
+## Landing Page:
+<div>
+<img src="https://github.com/AliAbdalwahaab/Independent-tourist-application-Flexplore/blob/main/designs/Recommended%20trips%20page.jpg"         alt="Recommended Trips Page" width="550">
+<img src="https://github.com/AliAbdalwahaab/Independent-tourist-application-Flexplore/blob/main/designs/Extended%20account%20menu.jpg"         alt="Extended Account menu" width="550">
+<img src="https://github.com/AliAbdalwahaab/Independent-tourist-application-Flexplore/blob/main/designs/Extended%20burger%20menu.jpg"         alt="Extended burger menu" width="550">
+
+  <p>The image provides a glimpse of Flexplore's Landing Page interface, showcasing an appealing and user-friendly design.This page features a carefully curated list of recommended trips for users,each accompanied by essential details such as estimated cost, time and users'reviews. This list aims to provide users with exciting and enticing options for their next adventure.<br>
+To facilitate easy navigation and access to important features, the Landing Page incorporates two convenient side menus. The right-side menu offers quick links to vital sections such as "Account Settings," "Rate Us," and "Info and Safety." By simply clicking on these options, users can effortlessly navigate to the respective pages, enhancing their overall experience and providing them with greater control over their app preferences.<br>
+On the other hand, the left-side menu focuses primarily on trip-related functionalities. It provides users with convenient access to search for specific trips, review their trip history through the "History" section, and customize their preferences by utilizing the "Preferences" feature. This left-side menu empowers users to easily manage their trips, view past experiences, and fine-tune their preferences to receive more personalized and tailored recommendations.
+
+</div>
 
 ### Account Settings: 
 <div>
@@ -40,6 +51,11 @@ In conclusion, our innovative travel application empowers independent tourists t
   <p>The image reveals Flexplore's Account Settings interface, a streamlined and user-friendly feature. At its center is a customizable profile picture, inviting users to personalize their experience. Below, The user can change their Email, phone number and username. Overall, the image embodies Flexplore's commitment to a visually appealing and accessible interface, fostering personalization and ease of use for independent travelers.</p>
 </div>
 
+### Info and Safety:
+<div>
+<img src="https://github.com/AliAbdalwahaab/Independent-tourist-application-Flexplore/blob/main/designs/Info%20and%20safety.jpeg"            alt="Info and safety Page" width="550">
+  <p>The image reveals Flexplore's Info and Safety interface,which provides the user with the terms and conditions of the Application as well as the safety terms that the user should read before starting a trip.</p>
+</div>
 ##
 ### Trip information and customization:
 <div>
