@@ -104,13 +104,15 @@ class _DuringTripPageState extends State<DuringTripPage> {
                       borderRadius: BorderRadius.circular(18.0),
                       side: const BorderSide(color: Colors.red)))),
               onPressed: () {
-                 
                 EndedTrip endedTrip = EndedTrip(
                   name: widget.stops[0].name,
                   image: widget.stops[0].image,
                   time: _secondsElapsed,
                   money: 0, //to be changed
-                  distance: DuringTripPage.totalDistanceWalked,
+                  //round the distance to 1 decimal place
+                  distance: double.parse(
+                    DuringTripPage.totalDistanceWalked.toStringAsFixed(1),
+                  ),
                   numberOfStops: widget.stops.length,
                   rating: 3,
                   date: DateTime.now(),
