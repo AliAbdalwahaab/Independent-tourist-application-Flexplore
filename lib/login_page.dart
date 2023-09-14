@@ -1,5 +1,3 @@
-import 'dart:js';
-
 import 'package:flutter/material.dart';
 import 'package:indeoendent_tourist_app_main/homePage.dart';
 import 'package:indeoendent_tourist_app_main/signup_page.dart';
@@ -33,7 +31,7 @@ class LoginPage extends StatelessWidget {
                 labelStyle: TextStyle(color: Color(0xff146c94)),
               ),
             ),
-             ElevatedButton(
+            ElevatedButton(
               child: const Text('Signup'),
               onPressed: () {
                 Navigator.push(
@@ -45,7 +43,9 @@ class LoginPage extends StatelessWidget {
             ),
             ElevatedButton(
               child: const Text('Login'),
-              onPressed: _onLoginPressed,
+              onPressed: () {
+                _onLoginPressed(context);
+              },
               style: ElevatedButton.styleFrom(primary: const Color(0xff19a7ce)),
             ),
           ],
@@ -55,9 +55,9 @@ class LoginPage extends StatelessWidget {
     );
   }
 
-  void _onLoginPressed() {
+  void _onLoginPressed(BuildContext context) {
     Navigator.push(
-      context as BuildContext,
+      context,
       MaterialPageRoute(builder: (context) => const HomePage()),
     );
   }
