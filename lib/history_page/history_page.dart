@@ -56,6 +56,8 @@ List<EndedTrip> checkShowDate(List<EndedTrip> endedTrips) {
     for (int i = 0; i < endedTrips.length - 1; i++) {
       if (endedTrips[i].date.day != endedTrips[i + 1].date.day) {
         endedTrips[i].showDate = true;
+      } else {
+        endedTrips[i].showDate = false;
       }
     }
     endedTrips[endedTrips.length - 1].showDate = true;
