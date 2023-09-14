@@ -1,9 +1,9 @@
-import 'package:flutter/material.dart';
+// ignore: file_names
 import 'package:flutter/material.dart';
 import 'package:indeoendent_tourist_app_main/during_trip/stop.dart';
 
 class EditTrip extends StatefulWidget {
-  EditTrip({required this.stops, super.key});
+  const EditTrip({required this.stops, super.key});
   final List<Stop>stops;
 
   @override
@@ -25,7 +25,7 @@ class _EditTripState extends State<EditTrip> {
       appBar: editTripPageAppBar(),
       body: Column(
         children: [
-          Container(height: (size.height-200)*(noOfStops/stops.length)+50,
+          SizedBox(height: (size.height-200)*(noOfStops/stops.length)+50,
           
           child:Column(
         children: [
@@ -58,7 +58,7 @@ class _EditTripState extends State<EditTrip> {
                   })),
                       Container(height:10)
 ])),
-          Container(height: ((size.height-200)*(noOfRemovedStops/stops.length))+50,
+          SizedBox(height: ((size.height-200)*(noOfRemovedStops/stops.length))+50,
           
           child:Column(
         children: [
