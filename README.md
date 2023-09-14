@@ -58,6 +58,14 @@ On the other hand, the left-side menu focuses primarily on trip-related function
 </div>
 
 ##
+### Exploring further:
+<div>
+<img src="https://raw.githubusercontent.com/AliAbdalwahaab/Independent-tourist-application-Flexplore/main/designs/Explore%20tab.jpeg"            alt="Exploration tab" width="550">
+<img src="https://raw.githubusercontent.com/AliAbdalwahaab/Independent-tourist-application-Flexplore/main/designs/Expanded%20article%20page.jpeg"            alt="Exploration tab" width="550">
+  <p>In this tab from the landing page tabs, the user can find some informative articles that describe a selected handful of trips and their themes and stops, giving the user more insight as to what different trips can offer.</p>
+</div>
+
+##
 ### Trip information and customization:
 <div>
 <img src="https://raw.githubusercontent.com/AliAbdalwahaab/Independent-tourist-application-Flexplore/main/designs/Trip%20info.jpg"            alt="Trip info design sketch" width="550">
@@ -81,10 +89,3 @@ On the other hand, the left-side menu focuses primarily on trip-related function
   <p>This options drawer allows the user to perform a couple of actions while actively in a trip, essential actions like reporting a problem or giving feedback on a trip is important to be reached easily, thus we decided to provide them in a convenient place for the user.</p>
 </div>
 
-##
-### Exploring further:
-<div>
-<img src="https://raw.githubusercontent.com/AliAbdalwahaab/Independent-tourist-application-Flexplore/main/designs/Explore%20tab.jpeg"            alt="Exploration tab" width="550">
-<img src="https://raw.githubusercontent.com/AliAbdalwahaab/Independent-tourist-application-Flexplore/main/designs/Expanded%20article%20page.jpeg"            alt="Exploration tab" width="550">
-  <p>In this tab from the landing page tabs, the user can find some informative articles that describe a selected handful of trips and their themes and stops, giving the user more insight as to what different trips can offer.</p>
-</div>
