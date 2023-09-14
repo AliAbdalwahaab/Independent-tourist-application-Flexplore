@@ -56,6 +56,7 @@ On the other hand, the left-side menu focuses primarily on trip-related function
 <img src="https://github.com/AliAbdalwahaab/Independent-tourist-application-Flexplore/blob/main/designs/Info%20and%20safety.jpeg"            alt="Info and safety Page" width="550">
   <p>The image reveals Flexplore's Info and Safety interface,which provides the user with the terms and conditions of the Application as well as the safety terms that the user should read before starting a trip.</p>
 </div>
+
 ##
 ### Trip information and customization:
 <div>
