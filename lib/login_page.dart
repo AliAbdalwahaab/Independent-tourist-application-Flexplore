@@ -1,4 +1,4 @@
-import 'dart:js';
+// import 'dart:js';
 
 import 'package:flutter/material.dart';
 import 'package:indeoendent_tourist_app_main/homePage.dart';
@@ -33,32 +33,29 @@ class LoginPage extends StatelessWidget {
                 labelStyle: TextStyle(color: Color(0xff146c94)),
               ),
             ),
-             ElevatedButton(
-              child: const Text('Signup'),
+            ElevatedButton(
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => SignupPage()),
+                  MaterialPageRoute(builder: (context) => const SignupPage()),
                 );
               },
-              style: ElevatedButton.styleFrom(primary: const Color(0xff19a7ce)),
+              style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color(0xff19a7ce)),
+              child: const Text('Signup'),
             ),
             ElevatedButton(
+              onPressed: () => Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => const HomePage(),
+              )),
+              style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color(0xff19a7ce)),
               child: const Text('Login'),
-              onPressed: _onLoginPressed,
-              style: ElevatedButton.styleFrom(primary: const Color(0xff19a7ce)),
             ),
           ],
         ),
       ),
       backgroundColor: const Color(0xfff6f1f1),
-    );
-  }
-
-  void _onLoginPressed() {
-    Navigator.push(
-      context as BuildContext,
-      MaterialPageRoute(builder: (context) => const HomePage()),
     );
   }
 }
