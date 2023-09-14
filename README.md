@@ -40,31 +40,34 @@ In conclusion, our innovative travel application empowers independent tourists t
   <p>The image reveals Flexplore's Account Settings interface, a streamlined and user-friendly feature. At its center is a customizable profile picture, inviting users to personalize their experience. Below, The user can change their Email, phone number and username. Overall, the image embodies Flexplore's commitment to a visually appealing and accessible interface, fostering personalization and ease of use for independent travelers.</p>
 </div>
 
+##
+### Trip information and customization:
 <div>
-<img src="https://raw.githubusercontent.com/AliAbdalwahaab/Independent-tourist-application-Flexplore/main/designs/Account%20settings.jpeg"            alt="Account Settings Photo" width="550">
-  <p>The image reveals Flexplore's Account Settings interface, a streamlined and user-friendly feature. At its center is a customizable profile picture, inviting users to personalize their experience. Below, The user can change their Email, phone number and username. Overall, the image embodies Flexplore's commitment to a visually appealing and accessible interface, fostering personalization and ease of use for independent travelers.</p>
+<img src="https://raw.githubusercontent.com/AliAbdalwahaab/Independent-tourist-application-Flexplore/main/designs/Trip%20info.jpg"            alt="Trip info design sketch" width="550">
+  <p>This is the original concept of the expanded trip's info, a quick overview of the stops and the estimated time and cost of a chosen trip from the recommended trips displayed on the landing page.</p>
 </div>
 
 <div>
-<img src="https://raw.githubusercontent.com/AliAbdalwahaab/Independent-tourist-application-Flexplore/main/designs/Account%20settings.jpeg"            alt="Account Settings Photo" width="550">
-  <p>The image reveals Flexplore's Account Settings interface, a streamlined and user-friendly feature. At its center is a customizable profile picture, inviting users to personalize their experience. Below, The user can change their Email, phone number and username. Overall, the image embodies Flexplore's commitment to a visually appealing and accessible interface, fostering personalization and ease of use for independent travelers.</p>
+<img src="https://raw.githubusercontent.com/AliAbdalwahaab/Independent-tourist-application-Flexplore/main/designs/Edit%20trip.jpeg"            alt="edit trip design" width="550">
+  <p>While browsing a trip, the user might want to edit the course of a chosen trip to better fit their needs, therfore an edit trip functionality was provided to let the user add and remove stops in a trip, letting them craft their own unique trip.</p>
+</div>
+
+##
+### Starting a trip:
+<div>
+<img src="https://raw.githubusercontent.com/AliAbdalwahaab/Independent-tourist-application-Flexplore/main/designs/During%20trip.jpg"            alt="During trip design" width="550">
+  <p>When a user chooses to start a trip, the "during trip" page is what will be displayed to help the user navigate and reach destinations effeciently and promptly. The during trip page features an array of stops that is displayed neatly to let the user know what is the current stop they are at, what stops have been visited already and what stops to visit soon. Each stop's GPS coordinates is linked in the application to let the user easily reach the destination using Google maps' GPS services.</p>
 </div>
 
 <div>
-<img src="https://raw.githubusercontent.com/AliAbdalwahaab/Independent-tourist-application-Flexplore/main/designs/Account%20settings.jpeg"            alt="Account Settings Photo" width="550">
-  <p>The image reveals Flexplore's Account Settings interface, a streamlined and user-friendly feature. At its center is a customizable profile picture, inviting users to personalize their experience. Below, The user can change their Email, phone number and username. Overall, the image embodies Flexplore's commitment to a visually appealing and accessible interface, fostering personalization and ease of use for independent travelers.</p>
+<img src="https://raw.githubusercontent.com/AliAbdalwahaab/Independent-tourist-application-Flexplore/main/designs/During%20trip%20burger%20menu.jpg"            alt="Extended drawer in during trip page" width="550">
+  <p>This options drawer allows the user to perform a couple of actions while actively in a trip, essential actions like reporting a problem or giving feedback on a trip is important to be reached easily, thus we decided to provide them in a convenient place for the user.</p>
 </div>
 
+##
+### Exploring further:
 <div>
-<img src="https://raw.githubusercontent.com/AliAbdalwahaab/Independent-tourist-application-Flexplore/main/designs/Account%20settings.jpeg"            alt="Account Settings Photo" width="550">
-  <p>The image reveals Flexplore's Account Settings interface, a streamlined and user-friendly feature. At its center is a customizable profile picture, inviting users to personalize their experience. Below, The user can change their Email, phone number and username. Overall, the image embodies Flexplore's commitment to a visually appealing and accessible interface, fostering personalization and ease of use for independent travelers.</p>
+<img src="https://raw.githubusercontent.com/AliAbdalwahaab/Independent-tourist-application-Flexplore/main/designs/Explore%20tab.jpeg"            alt="Exploration tab" width="550">
+<img src="https://raw.githubusercontent.com/AliAbdalwahaab/Independent-tourist-application-Flexplore/main/designs/Expanded%20article%20page.jpeg"            alt="Exploration tab" width="550">
+  <p>In this tab from the landing page tabs, the user can find some informative articles that describe a selected handful of trips and their themes and stops, giving the user more insight as to what different trips can offer.</p>
 </div>
-
-
-<div>
-<img src="https://raw.githubusercontent.com/AliAbdalwahaab/Independent-tourist-application-Flexplore/main/designs/Account%20settings.jpeg"            alt="Account Settings Photo" width="550">
-  <p>The image reveals Flexplore's Account Settings interface, a streamlined and user-friendly feature. At its center is a customizable profile picture, inviting users to personalize their experience. Below, The user can change their Email, phone number and username. Overall, the image embodies Flexplore's commitment to a visually appealing and accessible interface, fostering personalization and ease of use for independent travelers.</p>
-</div>
-
-
-
