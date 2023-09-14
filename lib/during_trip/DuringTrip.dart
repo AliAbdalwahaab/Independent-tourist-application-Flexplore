@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:indeoendent_tourist_app_main/during_trip/stop.dart';
 import 'package:indeoendent_tourist_app_main/during_trip/trip_scrollable_area.dart';
 import 'package:indeoendent_tourist_app_main/feedback/feedback_page.dart';
+import 'package:indeoendent_tourist_app_main/history_page/ended_trip.dart';
+import 'package:indeoendent_tourist_app_main/history_page/final_ended_trips.dart';
 
 class DuringTripPage extends StatefulWidget {
   const DuringTripPage({
@@ -23,6 +25,7 @@ class _DuringTripPageState extends State<DuringTripPage> {
   late Timer _timer;
   int _secondsElapsed = 0;
   late int tripNum;
+
   //bool _tripStarted = false;
 
   @override
@@ -101,6 +104,22 @@ class _DuringTripPageState extends State<DuringTripPage> {
                       borderRadius: BorderRadius.circular(18.0),
                       side: const BorderSide(color: Colors.red)))),
               onPressed: () {
+                EndedTrip endedTrip = EndedTrip(
+                  name: widget.stops[0].name,
+                  image: widget.stops[0].image,
+                  time: _secondsElapsed,
+                  money: 0, //to be changed
+                  //round the distance to 1 decimal place
+                  distance: double.parse(
+                    DuringTripPage.totalDistanceWalked.toStringAsFixed(1),
+                  ),
+                  numberOfStops: widget.stops.length,
+                  rating: 3,
+                  date: DateTime.now(),
+                  showDate: false,
+                );
+                historyTrips.add(endedTrip);
+
                 stopTimer();
                 Navigator.of(context).push(
                     MaterialPageRoute(builder: (context) => const FeedBack()));

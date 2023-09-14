@@ -20,6 +20,7 @@ class _ExplorePageState extends State<ExplorePage> {
           children: [
             Expanded(
               child: ListView.builder(
+                itemCount: 2,
                 itemBuilder: (context, index) {
                   return Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
