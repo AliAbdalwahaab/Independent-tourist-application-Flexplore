@@ -46,6 +46,7 @@ class LoginPage extends StatelessWidget {
             height: 10,
           ),
           const TextField(
+            obscureText: true,
             decoration: InputDecoration(
               hintText: "Password",
               filled: true,
