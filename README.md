@@ -89,3 +89,9 @@ On the other hand, the left-side menu focuses primarily on trip-related function
   <p>This options drawer allows the user to perform a couple of actions while actively in a trip, essential actions like reporting a problem or giving feedback on a trip is important to be reached easily, thus we decided to provide them in a convenient place for the user.</p>
 </div>
 
+##
+## Trip's feedback:
+<div>
+  <img src="https://github.com/AliAbdalwahaab/Independent-tourist-application-Flexplore/blob/main/designs/Trip%20Feedback.jpeg" alt="Feedback page" width="550">
+  <p> After users have completed their trips, Flexplore provides them with the opportunity to give feedback on various aspects of their experience. This valuable feedback encompasses areas such as the stops along the trip, the effectiveness of the navigation system, the walking distances involved, and the quality of services received.</p>
+</div>
